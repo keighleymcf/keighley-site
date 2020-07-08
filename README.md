@@ -1,2 +1,3 @@
-# keighley-site
-playground to refresh concepts and test ideas
+## Personal website
+
+small project to refresh concepts and play around with ideas
