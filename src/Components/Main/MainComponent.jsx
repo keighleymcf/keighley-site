@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Typist from 'react-typist';
-import spark from '../../assets/sparkle_gif.gif';
+import sparkle from '../../assets/sparkle_gif.gif';
 
 import './styles.scss';
 
 const Main = () => {
-  const [displaySpark, setDisplaySpark] = useState(null);
+  const [runAnimation, setRunAnimation] = useState(true);
+  const [displaySpark, setDisplaySpark] = useState(true);
 
-  const displaySparkTimer = () => {
-    setTimeout(7400, setDisplaySpark('displaySpark'));
+  const animationLength = 22000;
+
+  const endAnimationTimer = () => {
+    setTimeout(() => setDisplaySpark(true), animationLength);
+    setTimeout(() => setRunAnimation(false), animationLength);
   };
+
   useEffect(() => {
-    displaySparkTimer();
+    endAnimationTimer();
   }, []);
 
   return (
@@ -19,29 +24,35 @@ const Main = () => {
       <div className='headline'>
         <h2>Full-stack web development with</h2>
         <h2 className='typist-text'>
-          <Typist
-            cursor={{ hideWhenDone: true }}
-            avgTypingDelay={100}
-            startDelay={2000}
-          >
-            spark
-            <Typist.Backspace count={5} delay={1000} />
-            vision
-            <Typist.Backspace count={6} delay={1000} />
-            attention to detail
-            <Typist.Backspace count={4} delay={1000} />
-            <span></span>
-            <Typist.Backspace count={0} delay={1200} />
-            <span> ... hey look ma I'm typing!</span>
-            <Typist.Backspace count={43} delay={1200} />
-            spark
-          </Typist>
-          <img
-            src={spark}
-            className={displaySpark}
-            alt='spark icon - Icon made by Freepik from www.flaticon.com'
-          />
+          {runAnimation ? (
+            <Typist
+              cursor={{ hideWhenDone: true }}
+              avgTypingDelay={100}
+              startDelay={2000}
+            >
+              spark
+              <Typist.Backspace count={5} delay={1000} />
+              vision
+              <Typist.Backspace count={6} delay={1000} />
+              attention to detail
+              <Typist.Backspace count={4} delay={1000} />
+              <span></span>
+              <Typist.Backspace count={0} delay={1200} />
+              <span> ... hey look ma I'm typing!</span>
+              <Typist.Backspace count={43} delay={1200} />
+              spark
+            </Typist>
+          ) : (
+            <div>spark</div>
+          )}
         </h2>
+        {displaySpark ? (
+          <img
+            className='sparkle'
+            src={sparkle}
+            alt='sparkle - tenor gif post-id 14091652'
+          />
+        ) : null}
       </div>
       <p>
         I am a full-stack web developer specialised in Javascript, React,
