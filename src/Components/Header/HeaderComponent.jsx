@@ -7,6 +7,7 @@ const Header = () => {
     <div className='headerContainer'>
       <Link to='/contact' className='link'>
         Contact
+        <div className="link-underline"></div>
       </Link>
       <h1 className='headerName'>Keighley McFarland</h1>
       <Link to='/references' className='link'>

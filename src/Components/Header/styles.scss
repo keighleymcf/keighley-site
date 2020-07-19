@@ -13,16 +13,21 @@
 
 .link {
   font-family: 'Montserrat Subrayada', sans-serif;
+
   &:hover {
     .link-underline {
-      width: 100%;
+      width: calc(100% + 11px);
     }
   }
 }
 
 .link-underline {
-  transition: all 0.5s ease;
+  position: relative;
+  transition: all 0.3s ease;
   width: 0;
-  height: 5px;
+  left: -5px;
+  top: -8px;
+  height: 8px;
+  z-index: -1;
   background-color: #5eefcb;
 }
