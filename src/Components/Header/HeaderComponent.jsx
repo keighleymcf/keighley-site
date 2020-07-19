@@ -11,6 +11,7 @@ const Header = () => {
       <h1 className='headerName'>Keighley McFarland</h1>
       <Link to='/references' className='link'>
         References
+        <div className="link-underline"></div>
       </Link>
     </div>
   );
