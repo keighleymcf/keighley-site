@@ -3,12 +3,15 @@
   justify-content: center;
   align-items: flex-end;
   margin: auto;
-  max-width: 1024px;
+  border-bottom: 1px solid black;
+  height: 100px;
+  padding: 16px 0;
 }
 
 .headerName {
-  padding: 0 48px;
+  padding: 4px 48px;
   margin: 0;
+  font-size: 48px;
 }
 
 .link {

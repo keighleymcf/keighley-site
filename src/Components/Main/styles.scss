@@ -1,0 +1,14 @@
+.headline {
+  display: flex;
+  :first-child {
+    padding-right: 4px;
+  }
+}
+
+.typist-text {
+  background-color: #5eefcb;
+}
+
+.displaySpark {
+  display: inline-block;
+}
