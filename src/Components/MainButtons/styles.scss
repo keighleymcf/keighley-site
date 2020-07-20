@@ -1,0 +1,8 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  > :first-child {
+    margin-right: calc(15% + 16px);
+  }
+}
