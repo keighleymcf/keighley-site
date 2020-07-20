@@ -25,11 +25,11 @@ const Contact = () => {
       {!formSubmitted ? (
         <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="name">Your name</label>
-          {errors.message && renderErrorMessage()}
+          {errors.name && renderErrorMessage()}
           <input name="name" type="text" ref={register({ required: true })} />
 
           <label htmlFor="email">Your e-mail</label>
-          {errors.message && renderErrorMessage()}
+          {errors.email && renderErrorMessage()}
           <input name="email" type="email" ref={register({ required: true })} />
 
           <label htmlFor="message">Your message</label>
