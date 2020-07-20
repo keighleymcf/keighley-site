@@ -16,7 +16,7 @@ const Main = () => {
   const endAnimationTimer = () => {
     setTimeout(
       () => setSparkleClasses(classNames('sparkle', 'animateNone')),
-      animationLength + 1000
+      animationLength + 2000
     );
     setTimeout(() => setRunAnimation(false), animationLength);
   };
