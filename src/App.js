@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {IntlProvider} from "react-intl";
+
 import './app.scss';
 
 import Header from './Components/Header';
@@ -9,7 +11,10 @@ import Contact from './Components/Contact';
 import References from './Components/References';
 
 const App = () => {
+  const locale = "en";
+  
   return (
+    <IntlProvider locale={locale}>
     <Router>
       <div className='App'>
         <Header />
@@ -27,6 +32,7 @@ const App = () => {
         <Footer />
       </div>
     </Router>
+    </IntlProvider>
   );
 };
 

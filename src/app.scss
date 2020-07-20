@@ -7,17 +7,39 @@
 h3,
 h4,
 h5,
-a {
+a,
+button {
   font-family: 'Montserrat Subrayada', sans-serif;
 }
 
 a {
   text-decoration: none;
   color: black;
+  font-size: 18px;
 }
 
 .App {
   width: 80%;
   margin: auto;
   max-width: 1024px;
+}
+
+button {
+  box-sizing: border-box;
+  padding: 12px 18px;
+  background-color: white;
+  border: solid black 4px;
+  box-shadow: #d1d0d0 -6px 6px;
+  margin: 8px 8px 8px 8px;
+  font-size: 18px;
+  &:hover {
+    box-shadow: #5eefcb -6px 6px;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    transform: translate(-1px, 1px);
+    box-shadow: #5eefcb -5px 5px;
+  }
 }

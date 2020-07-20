@@ -57,6 +57,7 @@ const Main = () => {
           alt='sparkle - tenor gif post-id 14091652'
         />
       </div>
+      <section className="description-main">
       <p>
         I am a full-stack web developer specialised in Javascript, React,
         Node.js, and Express.js
@@ -66,11 +67,14 @@ const Main = () => {
         specialist
       </p>
       <p>
-        I love building high-quality digital products tailored to users' and
-        clients' needs
+        I love building high-quality, memorable digital products that make users' and
+        clients' lives better
       </p>
-      <button>Contact</button>
-      <button>Reference projects</button>
+      </section>
+      <section className="buttons">
+      <button className="contact-btn">Contact</button>
+      <button className="references-btn">Reference projects</button>
+      </section>
     </div>
   );
 };
