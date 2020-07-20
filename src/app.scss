@@ -4,6 +4,13 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
 h3,
 h4,
 h5,
@@ -16,12 +23,17 @@ a {
   text-decoration: none;
   color: black;
   font-size: 18px;
+  cursor: url('./assets/icons8-sparkler-48.png'), auto;
 }
 
 .App {
   width: 80%;
   margin: auto;
+  height: 100%;
   max-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 button {
@@ -32,6 +44,7 @@ button {
   box-shadow: #d1d0d0 -6px 6px;
   margin: 8px 8px 8px 8px;
   font-size: 18px;
+  cursor: url('./assets/icons8-sparkler-48.png'), auto;
   &:hover {
     box-shadow: #5eefcb -6px 6px;
   }
