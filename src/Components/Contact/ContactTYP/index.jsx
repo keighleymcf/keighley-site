@@ -1,3 +1,3 @@
-import ContactTYP from "./ContactTYPComponent"
+import ContactTYP from './ContactTYPComponent';
 
 export default ContactTYP;
