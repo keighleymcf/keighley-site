@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import Typist from 'react-typist';
 import sparkle from '../../assets/sparkle_gif_transparent.gif';
 import classNames from 'classnames';
@@ -70,10 +71,6 @@ const Main = () => {
         I love building high-quality, memorable digital products that make users' and
         clients' lives better
       </p>
-      </section>
-      <section className="buttons">
-      <button className="contact-btn">Contact</button>
-      <button className="references-btn">Reference projects</button>
       </section>
     </div>
   );

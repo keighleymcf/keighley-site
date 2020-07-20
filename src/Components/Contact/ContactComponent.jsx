@@ -3,7 +3,9 @@ import React from 'react'
 const Contact = () => {
   return (
     <div className="Contact">
-        Contact
+        <form action="">
+          insert contact form here
+        </form>
     </div>
   );
 }

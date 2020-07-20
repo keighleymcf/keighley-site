@@ -2,6 +2,7 @@
 
 * {
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
 }
 
 html,
@@ -37,7 +38,6 @@ a {
 }
 
 button {
-  box-sizing: border-box;
   padding: 12px 18px;
   background-color: white;
   border: solid black 4px;

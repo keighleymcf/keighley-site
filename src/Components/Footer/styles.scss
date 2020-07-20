@@ -1,8 +1,18 @@
 .footer {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   position: relative;
   height: 48px;
   margin-top: auto;
+  padding: 16px;
+  font-size: 16px;
+  span {
+    font-family: 'Montserrat Subrayada', sans-serif;
+  }
+}
+
+.social {
+  padding: 8px;
+  font-size: 16px;
 }

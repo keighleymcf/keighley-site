@@ -33,3 +33,13 @@
   z-index: -1;
   background-color: #5eefcb;
 }
+
+.headline {
+  display: flex;
+  align-items: flex-end;
+  line-height: 2rem;
+  height: 150px;
+  :first-child {
+    padding-right: 4px;
+  }
+}

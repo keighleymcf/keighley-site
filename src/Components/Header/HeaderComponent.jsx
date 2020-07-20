@@ -9,7 +9,9 @@ const Header = () => {
         Contact
         <div className="link-underline"></div>
       </Link>
-      <h1 className='headerName'>Keighley McFarland</h1>
+      <Link to='/'>
+        <h1 className='headerName'>Keighley McFarland</h1>
+      </Link>
       <Link to='/references' className='link'>
         References
         <div className="link-underline"></div>

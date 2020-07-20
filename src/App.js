@@ -6,6 +6,7 @@ import './app.scss';
 
 import Header from './Components/Header';
 import Main from './Components/Main';
+import MainButtons from './Components/MainButtons';
 import Footer from './Components/Footer';
 import Contact from './Components/Contact';
 import References from './Components/References';
@@ -18,6 +19,7 @@ const App = () => {
     <Router>
       <div className='App'>
         <Header />
+        <Main />
         <Switch>
           <Route path='/contact'>
             <Contact />
@@ -26,7 +28,7 @@ const App = () => {
             <References />
           </Route>
           <Route path='/'>
-            <Main />
+            <MainButtons/>
           </Route>
         </Switch>
         <Footer />
