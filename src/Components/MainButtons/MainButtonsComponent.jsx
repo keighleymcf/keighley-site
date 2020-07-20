@@ -6,7 +6,7 @@ const MainButtonsComponent = () => {
     return (
     <section className="buttons">
       <Link to="/contact"><button className="contact-btn">Contact</button></Link>
-      <Link to="/references"></Link><button className="references-btn">Reference projects</button>
+      <Link to="/references"><button className="references-btn">Reference projects</button></Link>
     </section>
     )
 }
