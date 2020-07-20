@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import Typist from 'react-typist';
-import sparkle from '../../assets/sparkle_gif.gif';
+import sparkle from '../../assets/sparkle_gif_transparent.gif';
+import classNames from 'classnames';
 
 import './styles.scss';
 
 const Main = () => {
   const [runAnimation, setRunAnimation] = useState(true);
-  const [displaySpark, setDisplaySpark] = useState(true);
+  const [sparkleClasses, setSparkleClasses] = useState(
+    classNames('sparkle', 'animateSparkle')
+  );
 
-  const animationLength = 22000;
+  const animationLength = 21000;
 
   const endAnimationTimer = () => {
-    setTimeout(() => setDisplaySpark(true), animationLength);
+    setTimeout(
+      () => setSparkleClasses(classNames('sparkle', 'animateNone')),
+      animationLength + 1000
+    );
     setTimeout(() => setRunAnimation(false), animationLength);
   };
 
@@ -28,7 +34,7 @@ const Main = () => {
             <Typist
               cursor={{ hideWhenDone: true }}
               avgTypingDelay={100}
-              startDelay={2000}
+              startDelay={1000}
             >
               spark
               <Typist.Backspace count={5} delay={1000} />
@@ -36,9 +42,8 @@ const Main = () => {
               <Typist.Backspace count={6} delay={1000} />
               attention to detail
               <Typist.Backspace count={4} delay={1000} />
-              <span></span>
-              <Typist.Backspace count={0} delay={1200} />
-              <span> ... hey look ma I'm typing!</span>
+              <Typist.Backspace count={0} delay={1200} /> ... hey look ma I'm
+              typing!
               <Typist.Backspace count={43} delay={1200} />
               spark
             </Typist>
@@ -46,13 +51,11 @@ const Main = () => {
             <div>spark</div>
           )}
         </h2>
-        {displaySpark ? (
-          <img
-            className='sparkle'
-            src={sparkle}
-            alt='sparkle - tenor gif post-id 14091652'
-          />
-        ) : null}
+        <img
+          className={sparkleClasses}
+          src={sparkle}
+          alt='sparkle - tenor gif post-id 14091652'
+        />
       </div>
       <p>
         I am a full-stack web developer specialised in Javascript, React,

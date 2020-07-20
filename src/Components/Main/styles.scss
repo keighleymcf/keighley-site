@@ -1,5 +1,7 @@
 .headline {
   display: flex;
+  align-items: flex-end;
+  height: 150px;
   :first-child {
     padding-right: 4px;
   }
@@ -10,5 +12,29 @@
 }
 
 .sparkle {
-  width: 128px;
+  width: 148px;
+  position: relative;
+  right: 12px;
+  top: 24px;
+  rotate: 90deg;
+}
+
+.animateNone {
+  opacity: 1;
+}
+
+.animateSparkle {
+  opacity: 0;
+  animation: showSparkle 0.4s ease 20.5s 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showSparkle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
