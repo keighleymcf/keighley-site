@@ -8,11 +8,28 @@
   :first-child {
     padding-right: 4px;
   }
+  @media (max-width: $max-width) {
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+height: 100px;
+  }
+}
+
+.headline-text {
+  @media (max-width: $max-width) {
+  padding-bottom: 8px;
+  margin: 0;
+  }
 }
 
 .typist-text {
   background-color: $turquoise;
   padding: 0 4px;
+  @media (max-width: $max-width) {
+    margin: 0;
+  }
+
 }
 
 .sparkle {
@@ -20,6 +37,10 @@
   position: relative;
   right: 12px;
   top: 24px;
+  @media (max-width: $max-width) {
+    align-self: flex-end;
+    top: -84px;
+  }
 }
 
 .animateNone {

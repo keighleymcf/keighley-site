@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 import Typist from 'react-typist';
-import sparkle from '../../assets/sparkle_gif_transparent.gif';
 import classNames from 'classnames';
+import sparkle from '../../assets/sparkle_gif_transparent.gif';
 
 import './styles.scss';
 
 const Main = () => {
   const [runAnimation, setRunAnimation] = useState(true);
   const [sparkleClasses, setSparkleClasses] = useState(
-    classNames('sparkle', 'animateSparkle')
+    classNames('sparkle', 'animateSparkle'),
   );
 
   const animationLength = 21000;
@@ -17,7 +17,7 @@ const Main = () => {
   const endAnimationTimer = () => {
     setTimeout(
       () => setSparkleClasses(classNames('sparkle', 'animateNone')),
-      animationLength + 2000
+      animationLength + 2000,
     );
     setTimeout(() => setRunAnimation(false), animationLength);
   };
@@ -27,10 +27,10 @@ const Main = () => {
   }, []);
 
   return (
-    <div className='Main'>
-      <div className='headline'>
-        <h2>Full-stack web development with</h2>
-        <h2 className='typist-text'>
+    <div className="Main">
+      <div className="headline">
+        <h2 className="headline-text">Full-stack web development with</h2>
+        <h2 className="typist-text">
           {runAnimation ? (
             <Typist
               cursor={{ hideWhenDone: true }}
@@ -43,7 +43,9 @@ const Main = () => {
               <Typist.Backspace count={6} delay={1000} />
               attention to detail
               <Typist.Backspace count={4} delay={1000} />
-              <Typist.Backspace count={0} delay={1200} /> ... hey look ma I'm
+              <Typist.Backspace count={0} delay={1200} />
+              {' '}
+              ... hey look ma I'm
               typing!
               <Typist.Backspace count={43} delay={1200} />
               spark
@@ -55,22 +57,22 @@ const Main = () => {
         <img
           className={sparkleClasses}
           src={sparkle}
-          alt='sparkle - tenor gif post-id 14091652'
+          alt="sparkle - tenor gif post-id 14091652"
         />
       </div>
       <section className="description-main">
-      <p>
-        I am a full-stack web developer specialised in Javascript, React,
-        Node.js, and Express.js
-      </p>
-      <p>
-        In my previous life, I was a project manager and science communications
-        specialist
-      </p>
-      <p>
-        I love building high-quality, memorable digital products that make users' and
-        clients' lives better
-      </p>
+        <p>
+          I am a full-stack web developer specialised in Javascript, React,
+          Node.js, and Express.js
+        </p>
+        <p>
+          In my previous life, I was a project manager and science communications
+          specialist
+        </p>
+        <p>
+          I love building high-quality, memorable digital products that make users' and
+          clients' lives better
+        </p>
       </section>
     </div>
   );
