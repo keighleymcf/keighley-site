@@ -18,7 +18,7 @@ const Contact = () => {
   const [showSubmissionError, setShowSubmissionError] = useState(false);
 
   const {
-    register, handleSubmit, watch, errors,
+    register, handleSubmit, errors,
   } = useForm();
 
   const sendEmail = () => {

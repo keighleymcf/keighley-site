@@ -5,23 +5,35 @@
   justify-content: center;
   align-items: flex-end;
   border-bottom: 1px solid black;
-  height: 100px;
+  min-height: 100px;
   padding: 16px 0;
-}
+  @media (max-width: $max-width) {
+    min-height: 200px;
+    padding: 24px 0;
+    margin-bottom: 20px;
+  }
+  }
 
 .headerName {
   padding: 4px 48px;
   margin: 0;
   font-size: 48px;
+  text-align: center;
+  @media (max-width: $max-width) {
+text-align: left;
+padding: 0;
+  }
 }
 
 .link {
   font-family: $fancy;
-
   &:hover {
     .link-underline {
       width: calc(100% + 11px);
     }
+  }
+  @media (max-width: $max-width) {
+    display: none;
   }
 }
 
@@ -34,6 +46,10 @@
   height: 8px;
   z-index: -1;
   background-color: $turquoise;
+  @media (max-width: $max-width) {
+    width: calc(100% + 11px);
+  }
+
 }
 
 .headline {
@@ -45,3 +61,14 @@
     padding-right: 4px;
   }
 }
+
+.mobile-menu {
+  display: none;
+  font-family: $fancy;
+  @media (max-width: $max-width) {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 48px;
+  }
+}
+
