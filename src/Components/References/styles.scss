@@ -1,0 +1,13 @@
+@import "../../assets/variables";
+
+.references {
+    margin-bottom: 24px;
+    a {
+        font-family: $normal;
+    }
+}
+
+.references-socials, .references-projects {
+    display: flex;
+    flex-direction: column;
+}
