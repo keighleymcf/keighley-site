@@ -13,7 +13,7 @@ const renderErrorMessage = () => (
 
 const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [showSubmissionError, setShowSubmissionError] = useState(false);
+  const [showSubmissionError, setShowSubmissionError] = useState(true);
 
   const {
     register, handleSubmit, watch, errors,
@@ -22,10 +22,8 @@ const Contact = () => {
   const sendEmail = () => {
     emailjs.sendForm('default_service', 'template_8dZbJEFv', '#contact-form', process.env.REACT_APP_EMAILJS_USERID)
       .then((result) => {
-        console.log(result);
         if (result.status === 200) setFormSubmitted(true);
       }).catch((err) => {
-        console.log(err);
         setShowSubmissionError(true);
       });
   };
@@ -38,15 +36,15 @@ const Contact = () => {
     <div className="contact">
       <h3>Contact</h3>
       {showSubmissionError ? (
-        <div className="submission-eror">
+        <div className="submission-error">
           <h4>Oh no!</h4>
-          <img src={icecream} alt="Fallen Ice Cream Cone icon by icons8 https://icons8.com/icons/set/fallen-ice-cream-cone" />
+          <img className="icecream" src={icecream} alt="Fallen Ice Cream Cone icon by icons8 https://icons8.com/icons/set/fallen-ice-cream-cone" />
           <p>Something went wrong</p>
           <p>Please try again later</p>
           <p>
-            Or send an email the old school way to
-            <a href="mailto:contact@keighleymcfarland.me">contact@keighleymcfarland.me</a>
+            or send an email the regular way to
           </p>
+          <a href="mailto:contact@keighleymcfarland.me">contact@keighleymcfarland.me</a>
         </div>
       ) : null}
       {!formSubmitted ? (

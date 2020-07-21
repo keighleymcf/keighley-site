@@ -1,3 +1,8 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -8,3 +13,29 @@
     color: tomato;
     font-size: .8rem;
 }
+
+.submission-error {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    border: tomato 2px solid;
+    box-shadow: #d1d0d0 -4px 4px;
+    margin: 16px;
+    max-width: 400px;
+    padding: 16px;
+    h4 {
+        margin: 8px;
+    }
+    p, a {
+        font-size: 14px;
+        text-align: center;
+        margin: 4px;
+    }
+    a {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+background-color: #5eefcb;
+padding: 2px 4px;
+}}
