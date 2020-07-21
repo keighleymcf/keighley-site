@@ -69,4 +69,7 @@ height: 100px;
 
 .description-main {
   padding: 24px 0;
+  @media (max-width: $max-width) {
+    padding-bottom: 0;
+  }
 }
