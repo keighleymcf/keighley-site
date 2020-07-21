@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Montserrat:wght@400;700&display=swap');
+@import "./assets/variables";
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $normal;
   box-sizing: border-box;
 }
 
@@ -17,14 +17,14 @@ h4,
 h5,
 a,
 button {
-  font-family: 'Montserrat Subrayada', sans-serif;
+  font-family: $fancy;
 }
 
 a {
   text-decoration: none;
   color: black;
   font-size: 18px;
-  cursor: url('./assets/icons8-sparkler-48.png'), auto;
+  cursor: pointer;
 }
 
 .App {
@@ -41,18 +41,18 @@ button {
   padding: 12px 18px;
   background-color: white;
   border: solid black 4px;
-  box-shadow: #d1d0d0 -6px 6px;
+  box-shadow: $shadow -6px 6px;
   margin: 8px 8px 8px 8px;
   font-size: 18px;
-  cursor: url('./assets/icons8-sparkler-48.png'), auto;
+  cursor: pointer;
   &:hover {
-    box-shadow: #5eefcb -6px 6px;
+    box-shadow: $turquoise -6px 6px;
   }
   &:focus {
     outline: none;
   }
   &:active {
     transform: translate(-1px, 1px);
-    box-shadow: #5eefcb -5px 5px;
+    box-shadow: $turquoise -5px 5px;
   }
 }

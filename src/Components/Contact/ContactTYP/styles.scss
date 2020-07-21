@@ -1,3 +1,5 @@
+@import "../../../assets/variables";
+
 .contact-typ-container {
   margin: 24px 0;
   display: flex;
@@ -5,8 +7,8 @@
     align-self: center;
     align-items: center;
     justify-content: center;
-    border: #5eefcb 2px solid;
-    box-shadow: #d1d0d0 -4px 4px;
+    border: $turquoise 2px solid;
+    box-shadow: $shadow -4px 4px;
     max-width: 400px;
     padding: 24px;
     h3 {

@@ -1,3 +1,5 @@
+@import "../../assets/variables";
+
 .headerContainer {
   display: flex;
   justify-content: center;
@@ -14,7 +16,7 @@
 }
 
 .link {
-  font-family: 'Montserrat Subrayada', sans-serif;
+  font-family: $fancy;
 
   &:hover {
     .link-underline {
@@ -31,7 +33,7 @@
   top: -8px;
   height: 8px;
   z-index: -1;
-  background-color: #5eefcb;
+  background-color: $turquoise;
 }
 
 .headline {

@@ -1,3 +1,5 @@
+@import "../../assets/variables";
+
 .contact {
     display: flex;
     flex-direction: column;
@@ -20,11 +22,12 @@
         box-shadow: none;
         &:focus {
             border: 2px solid black;
-            outline: #5eefcb solid 2px;
+            outline: $turquoise solid 2px;
         }
     }
     button {
-        width: fit-content;;
+        width: fit-content;
+        cursor: url('../../assets/icons8-sparkler-48.png'), auto;
     }
 }
 
@@ -42,7 +45,7 @@
     align-items: center;
     justify-content: center;
     border: tomato 2px solid;
-    box-shadow: #d1d0d0 -4px 4px;
+    box-shadow: $shadow -4px 4px;
     margin: 16px;
     max-width: 400px;
     padding: 16px;
@@ -55,8 +58,8 @@
         margin: 4px;
     }
     a {
-        font-family: 'Montserrat', sans-serif;
+        font-family: $normal;
         font-weight: bold;
-background-color: #5eefcb;
+background-color: $shadow;
 padding: 2px 4px;
 }}
