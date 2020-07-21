@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import emailjs from 'emailjs-com';
+import icecream from '../../assets/icons8-fallen-ice-cream-cone-64.png';
+
 import ContactTYP from './ContactTYP';
 
 import './styles.scss';
@@ -10,20 +13,44 @@ const renderErrorMessage = () => (
 
 const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [showSubmissionError, setShowSubmissionError] = useState(false);
 
   const {
     register, handleSubmit, watch, errors,
   } = useForm();
 
+  const sendEmail = () => {
+    emailjs.sendForm('default_service', 'template_8dZbJEFv', '#contact-form', process.env.REACT_APP_EMAILJS_USERID)
+      .then((result) => {
+        console.log(result);
+        if (result.status === 200) setFormSubmitted(true);
+      }).catch((err) => {
+        console.log(err);
+        setShowSubmissionError(true);
+      });
+  };
+
   const onSubmit = () => {
-    setFormSubmitted(true);
+    sendEmail();
   };
 
   return (
     <div className="contact">
       <h3>Contact</h3>
+      {showSubmissionError ? (
+        <div className="submission-eror">
+          <h4>Oh no!</h4>
+          <img src={icecream} alt="Fallen Ice Cream Cone icon by icons8 https://icons8.com/icons/set/fallen-ice-cream-cone" />
+          <p>Something went wrong</p>
+          <p>Please try again later</p>
+          <p>
+            Or send an email the old school way to
+            <a href="mailto:contact@keighleymcfarland.me">contact@keighleymcfarland.me</a>
+          </p>
+        </div>
+      ) : null}
       {!formSubmitted ? (
-        <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="contact-form" id="contact-form" onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="name">Your name</label>
           {errors.name && renderErrorMessage()}
           <input name="name" type="text" ref={register({ required: true })} />
