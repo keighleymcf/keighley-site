@@ -6,16 +6,35 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  height: 48px;
-  margin-top: auto;
+  bottom: 0;
+  height: $footer-height;
   padding: 16px;
-  font-size: 16px;
+  font-size: 14px;
+  width: 80%;
+  margin: auto;
+  margin-top: 24px;
+  background-color: white;
   span {
     font-family: $fancy;
   }
+  a {
+    font-size: 14px;
+  }
 }
 
-.social {
+.socials-footer {
   padding: 8px;
   font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  a {
+    display: flex;
+   align-items: center;
+   padding-left: 12px;
+
+}
+}
+
+.social-icon-footer {
+  width: 20px;
 }

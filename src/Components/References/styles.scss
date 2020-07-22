@@ -2,12 +2,34 @@
 
 .references {
     margin-bottom: 24px;
-    a {
-        font-family: $normal;
-    }
 }
 
 .references-socials, .references-projects {
     display: flex;
     flex-direction: column;
+    
+}
+
+.references-projects {
+a {
+    background-color: $turquoise;
+    padding: 4px 8px;
+    width: fit-content;
+}
+li > a {
+    font-size: 16px;
+    background-color: white;
+    padding: 0;
+}
+}
+
+.references-socials {
+    a {
+        padding-bottom: 12px;
+        display: flex;
+        align-items: center;
+    }
+    img {
+        margin-right: 8px;
+    }
 }

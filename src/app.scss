@@ -28,13 +28,20 @@ a {
 }
 
 .App {
-  width: 80%;
+  width: 100%;
   margin: auto;
   height: 100%;
   max-width: 1024px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+.main-content {
+  width: 80%;
+  margin: auto;
+  height: auto;
+  flex: 1;
 }
 
 button {

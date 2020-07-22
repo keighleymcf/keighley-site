@@ -1,19 +1,23 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
+import github from '../../assets/icons8-github-30.png';
+import linkedin from '../../assets/icons8-linkedin-30.png';
 
-import "./styles.scss"
+import './styles.scss';
 
-const Footer = () => {
-  return (
-    <footer className="footer">
-        <span>© Keighley McFarland 2020</span>
-        <Link to="/contact" className="social">Contact</Link>
-        <div>
-        <a href="https://github.com/keighleymcf" className="social">Github</a>
-        <a href="https://www.linkedin.com/in/keighleymcfarland/" className="social">LinkedIn</a>
-        </div>
-    </footer>
-  );
-}
+const Footer = () => (
+  <footer className="footer">
+    <span>© Keighley McFarland 2020</span>
+    <Link to="/contact">Contact</Link>
+    <div className="socials-footer">
+      <a href="https://github.com/keighleymcf">
+        <img className="social-icon-footer" src={github} alt="github icon from icons8 https://icons8.com/icons/set/github" />
+      </a>
+      <a href="https://www.linkedin.com/in/keighleymcfarland/">
+        <img className="social-icon-footer" src={linkedin} alt="linkedin icon from icons8 https://icons8.com/icons/set/linkedin" />
+      </a>
+    </div>
+  </footer>
+);
 
 export default Footer;
