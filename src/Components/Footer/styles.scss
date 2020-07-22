@@ -10,10 +10,16 @@
   height: $footer-height;
   padding: 16px;
   font-size: 14px;
-  width: 80%;
+  width: 100%;
   margin: auto;
   margin-top: 24px;
   background-color: white;
+  @media (max-width: $max-width) {
+    width: 100%;
+    span {
+      max-width: 140px;
+    }
+  }
   span {
     font-family: $fancy;
   }
@@ -22,16 +28,23 @@
   }
 }
 
+.contact-footer {
+  justify-self: center;
+}
+
 .socials-footer {
-  padding: 8px;
+  width: 226px;
   font-size: 16px;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   a {
     display: flex;
    align-items: center;
    padding-left: 12px;
-
+}
+@media (max-width: $max-width) {
+width: 140px;
 }
 }
 
