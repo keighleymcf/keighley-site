@@ -63,7 +63,7 @@ const Main = () => {
       <section className="description-main">
         <p>
           I am a full-stack web developer specialised in Javascript, React,
-          Node.js, and Express.js
+          Node.js, and Express.js based in Vienna
         </p>
         <p>
           In my previous life, I was a project manager and science communications
