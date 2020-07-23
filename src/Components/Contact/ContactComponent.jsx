@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+
 import emailjs from 'emailjs-com';
 import iceCream from '../../assets/icons8-fallen-ice-cream-cone-64.png';
 
@@ -25,7 +27,7 @@ const Contact = () => {
     emailjs.sendForm('default_service', 'template_8dZbJEFv', '#contact-form', process.env.REACT_APP_EMAILJS_USERID)
       .then((result) => {
         if (result.status === 200) setFormSubmitted(true);
-      }).catch((err) => {
+      }).catch(() => {
         setShowSubmissionError(true);
       });
   };
@@ -70,6 +72,12 @@ const Contact = () => {
           <textarea name="message" rows="4" ref={register({ required: true })} />
 
           <button type="submit">Submit</button>
+          <p className="consent">
+            By clicking "Submit", you confirm that you have read and agree to the
+            {' '}
+            <Link to="/impressum#terms">terms and privacy policy</Link>
+          </p>
+
         </form>
       ) : (<ContactTYP />)}
     </div>

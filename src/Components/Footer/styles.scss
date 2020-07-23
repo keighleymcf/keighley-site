@@ -17,11 +17,8 @@
   @media (max-width: $max-width) {
     width: 100%;
     span {
-      max-width: 140px;
+      max-width: 120px;
     }
-  }
-  span {
-    font-family: $fancy;
   }
   a {
     font-size: 14px;
@@ -41,7 +38,7 @@
   a {
     display: flex;
    align-items: center;
-   padding-left: 12px;
+   padding-left: 8px;
 }
 @media (max-width: $max-width) {
 width: 140px;

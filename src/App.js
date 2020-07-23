@@ -10,6 +10,7 @@ import MainButtons from './Components/MainButtons';
 import Footer from './Components/Footer';
 import Contact from './Components/Contact';
 import References from './Components/References';
+import Impressum from './Components/Impressum';
 
 const App = () => {
   const locale = 'en';
@@ -27,6 +28,9 @@ const App = () => {
               </Route>
               <Route path="/references">
                 <References />
+              </Route>
+              <Route path="/impressum">
+                <Impressum />
               </Route>
               <Route path="/">
                 <MainButtons />

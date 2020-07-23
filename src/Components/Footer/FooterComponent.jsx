@@ -8,8 +8,9 @@ import './styles.scss';
 const Footer = () => (
   <footer className="footer">
     <span>© Keighley McFarland 2020</span>
-    <Link to="/contact" className="contact-footer">Contact</Link>
+    <Link to="/impressum" className="impressum-footer">Impressum</Link>
     <div className="socials-footer">
+      <Link to="/contact" className="contact-footer">Contact</Link>
       <a href="https://github.com/keighleymcf">
         <img className="social-icon-footer" src={github} alt="github icon from icons8 https://icons8.com/icons/set/github" />
       </a>
