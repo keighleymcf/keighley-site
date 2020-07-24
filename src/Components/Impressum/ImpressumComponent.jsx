@@ -177,7 +177,7 @@ const Footer = () => (
         Wir verwenden https um Daten abhörsicher im Internet zu übertragen (Datenschutz durch Technikgestaltung Artikel 25 Absatz 1 DSGVO). Durch den Einsatz von TLS (Transport Layer Security), einem Verschlüsselungsprotokoll zur sicheren Datenübertragung im Internet können wir den Schutz vertraulicher Daten sicherstellen. Sie erkennen die Benutzung dieser Absicherung der Datenübertragung am kleinen Schlosssymbol links oben im Browser und der Verwendung des Schemas https (anstatt http) als Teil unserer Internetadresse.
       </p>
 
-      <h4>Kontakt via Kontaktformular oder E-mail</h4>
+      <h4>Datenschutzerklärung: Kontakt via Kontaktformular oder E-mail</h4>
       <h5>
         Personenbezogene Daten
       </h5>

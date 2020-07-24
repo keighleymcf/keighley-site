@@ -9,6 +9,11 @@ const References = () => (
     <h3>References</h3>
     <section className="references-projects">
       <h4>Experimentation and Learning Projects</h4>
+      <a href="https://www.keighleymcfarland.me">keighleymcfarland.me</a>
+      <ul>
+        <li>React, Redux, HTML5, CSS3, SCSS</li>
+        <li><a href="https://github.com/keighleymcf/keighley-site">Github repo</a></li>
+      </ul>
       <a href="https://appointer-med.herokuapp.com/">AppointerMed</a>
       <ul>
         <li>React, Express, Node, MongoDB, MaterialUI, HTML5, CSS3, SCSS</li>
