@@ -9,7 +9,7 @@ import './styles.scss';
 const Main = () => {
   const [runAnimation, setRunAnimation] = useState(true);
   const [sparkleClasses, setSparkleClasses] = useState(
-    classNames('sparkle', 'animateSparkle'),
+    classNames('sparkle', 'animateNone'),
   );
 
   const animationLength = 21000;

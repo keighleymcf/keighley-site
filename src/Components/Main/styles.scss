@@ -36,10 +36,16 @@ height: 100px;
   height: 148px;
   position: relative;
   right: 12px;
-  top: 24px;
+  top: 48px;
   @media (max-width: $max-width) {
+    position: absolute;
     align-self: flex-end;
-    top: -84px;
+    top: 280px;
+    right: 140px;
+  };
+  @media (max-width: 580px) {
+    top: 315px;
+    right: 20px;
   }
 }
 
