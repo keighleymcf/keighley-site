@@ -31,16 +31,20 @@ a {
   width: 100%;
   margin: auto;
   height: 100%;
+  max-width: 1024px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
 .main-content {
-  width: 1000px;
+  width: 100%;
   margin: auto;
   height: auto;
   flex: 1;
+  @media (max-width: $max-width) {
+    width: 80%;
+  }
 }
 
 button {
