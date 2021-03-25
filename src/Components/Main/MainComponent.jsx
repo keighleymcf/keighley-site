@@ -17,7 +17,7 @@ const Main = () => {
   const endAnimationTimer = () => {
     setTimeout(
       () => setSparkleClasses(classNames('sparkle', 'animateNone')),
-      animationLength + 2000,
+      animationLength + 1500,
     );
     setTimeout(() => setRunAnimation(false), animationLength);
   };
@@ -62,8 +62,8 @@ const Main = () => {
       </div>
       <section className="description-main">
         <p>
-          I am a full-stack web developer specialised in Javascript, React,
-          Node.js, and Express.js based in Vienna
+          I am a full-stack web developer specialised in Javascript, React, Typescript, and
+          Node.js based in Vienna
         </p>
         <p>
           In my previous life, I was a project manager and science communications
