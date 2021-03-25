@@ -11,6 +11,15 @@
 }
 
 .references-projects {
+p { 
+    background-color: $turquoise;
+    padding: 4px 8px;
+    width: fit-content;
+    margin-bottom: 16px;
+}
+span {
+    font-weight: bold;
+}
 a {
     background-color: $turquoise;
     padding: 4px 8px;

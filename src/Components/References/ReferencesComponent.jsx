@@ -17,13 +17,17 @@ const References = () => (
       <a href="https://appointer-med.herokuapp.com/">AppointerMed</a>
       <ul>
         <li>React, Express, Node, MongoDB, MaterialUI, HTML5, CSS3, SCSS</li>
-        <li><a href="https://appointer-med.herokuapp.com/">Link to app</a></li>
+        {/*         <li><a href="https://appointer-med.herokuapp.com/">Link to app</a></li>
+ */}
+        {' '}
         <li><a href="https://github.com/keighleymcf/ironhack-react-project">Github repo</a></li>
       </ul>
       <a href="https://sht-i-wanna-eat.herokuapp.com/">sh*t i wanna eat</a>
       <ul>
         <li>Express, Node, MongoDB, Handlebars, Google Maps API, HTML5, CSS3</li>
-        <li><a href="https://sht-i-wanna-eat.herokuapp.com/">Link to app</a></li>
+        {/*         <li><a href="https://sht-i-wanna-eat.herokuapp.com/">Link to app</a></li>
+ */}
+        {' '}
         <li><a href="https://github.com/keighleymcf/sht-i-wanna-eat">Github repo</a></li>
       </ul>
       <a href="https://keighleymcf.github.io/ironhack-game-project/">Peace Pal</a>
@@ -32,6 +36,13 @@ const References = () => (
         <li><a href="https://keighleymcf.github.io/ironhack-game-project/">Link to app</a></li>
         <li><a href="https://github.com/keighleymcf/ironhack-game-project">Github repo</a></li>
       </ul>
+      <p>
+        And ask me about my
+        {' '}
+        <span>crypto art</span>
+        {' '}
+        project!
+      </p>
     </section>
     <section className="references-socials">
       <h4>Socials</h4>
