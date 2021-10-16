@@ -89,7 +89,7 @@ const Contact = () => {
           <button type="submit">Submit</button>
           <p className="consent">
             {`By clicking "Submit", you confirm that you have read and agree to
-            the`}
+            the `}
             <Link to="/impressum#terms">
               information and terms in the impressum and privacy policy
               (Datenschutzerklärung)
