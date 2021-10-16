@@ -10,7 +10,7 @@
     "emailjs": "^3.2.1",
     "emailjs-com": "^2.6.3",
     "enzyme": "^3.11.0",
-    "helmet": "^3.23.3",
+    "helmet": "4.6.0",
     "install": "^0.13.0",
     "node-sass": "^4.14.1",
     "npm": "7.17.0",
