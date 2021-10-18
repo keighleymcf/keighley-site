@@ -12,7 +12,7 @@
     padding: 24px 0;
     margin-bottom: 20px;
   }
-  }
+}
 
 .headerName {
   padding: 4px 48px;
@@ -20,13 +20,12 @@
   font-size: 48px;
   text-align: center;
   @media (max-width: $max-width) {
-text-align: left;
-padding: 0;
+    text-align: left;
+    padding: 0;
   }
 }
 
 .link {
-  font-family: $fancy;
   &:hover {
     .link-underline {
       width: calc(100% + 11px);
@@ -49,7 +48,6 @@ padding: 0;
   @media (max-width: $max-width) {
     width: calc(100% + 11px);
   }
-
 }
 
 .headline {
@@ -64,11 +62,9 @@ padding: 0;
 
 .mobile-menu {
   display: none;
-  font-family: $fancy;
   @media (max-width: $max-width) {
     display: flex;
     justify-content: space-around;
     margin-bottom: 48px;
   }
 }
-
