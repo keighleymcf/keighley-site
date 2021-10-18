@@ -72,4 +72,11 @@ button {
     transform: translate(-1px, 1px);
     box-shadow: $turquoise -5px 5px;
   }
+  &:disabled {
+    background-color: $shadow;
+    color: $darkGrey;
+    border-color: $darkGrey;
+    box-shadow: $shadow -5px 5px;
+    cursor: not-allowed;
+  }
 }

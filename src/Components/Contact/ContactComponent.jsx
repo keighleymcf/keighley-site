@@ -6,6 +6,7 @@ import emailjs from "emailjs-com";
 import iceCream from "../../assets/icons8-fallen-ice-cream-cone-64.png";
 
 import ContactTYP from "./ContactTYP";
+import LoadingIndicator from "../LoadingIndicator";
 
 import "./styles.scss";
 
@@ -16,10 +17,12 @@ const renderErrorMessage = () => (
 const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [showSubmissionError, setShowSubmissionError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const { register, handleSubmit, errors } = useForm();
 
   const sendEmail = () => {
+    setLoading(true);
     emailjs
       .sendForm(
         "default_service",
@@ -28,9 +31,13 @@ const Contact = () => {
         process.env.REACT_APP_EMAILJS_USERID
       )
       .then((result) => {
-        if (result.status === 200) setFormSubmitted(true);
+        if (result.status === 200) {
+          setLoading(false);
+          setFormSubmitted(true);
+        }
       })
       .catch(() => {
+        setLoading(false);
         setShowSubmissionError(true);
       });
   };
@@ -41,6 +48,7 @@ const Contact = () => {
 
   return (
     <div className="contact">
+      {loading && <LoadingIndicator />}
       <h3>Contact</h3>
       {showSubmissionError ? (
         <div className="submission-error">
@@ -68,13 +76,23 @@ const Contact = () => {
             Your name
             {errors.name && renderErrorMessage()}
           </label>
-          <input name="name" type="text" ref={register({ required: true })} />
+          <input
+            name="name"
+            type="text"
+            ref={register({ required: true })}
+            disabled={loading}
+          />
 
           <label htmlFor="email">
             Your e-mail
             {errors.email && renderErrorMessage()}
           </label>
-          <input name="email" type="email" ref={register({ required: true })} />
+          <input
+            name="email"
+            type="email"
+            ref={register({ required: true })}
+            disabled={loading}
+          />
 
           <label htmlFor="message">
             Your message
@@ -84,9 +102,12 @@ const Contact = () => {
             name="message"
             rows="4"
             ref={register({ required: true })}
+            disabled={loading}
           />
 
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={loading}>
+            Submit
+          </button>
           <p className="consent">
             {`By clicking "Submit", you confirm that you have read and agree to
             the `}
