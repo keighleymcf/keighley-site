@@ -1,44 +1,30 @@
 @import "../../assets/variables";
 
 .references {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
-.references-socials, .references-projects {
-    display: flex;
-    flex-direction: column;
-    
+.references-socials,
+.references-projects {
+  display: flex;
+  flex-direction: column;
 }
 
 .references-projects {
-p { 
+  span {
     background-color: $turquoise;
-    padding: 4px 8px;
-    width: fit-content;
-    margin-bottom: 16px;
-}
-span {
     font-weight: bold;
-}
-a {
-    background-color: $turquoise;
-    padding: 4px 8px;
-    width: fit-content;
-}
-li > a {
-    font-size: 16px;
-    background-color: white;
-    padding: 0;
-}
+    padding: 0 2px;
+  }
 }
 
 .references-socials {
-    a {
-        padding-bottom: 12px;
-        display: flex;
-        align-items: center;
-    }
-    img {
-        margin-right: 8px;
-    }
+  a {
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+  }
+  img {
+    margin-right: 8px;
+  }
 }
