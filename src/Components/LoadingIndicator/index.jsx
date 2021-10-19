@@ -1,5 +1,5 @@
 import React from "react";
-import spinner from "../../assets/icons8-loading-circle.gif";
+import spinner from "../../assets/icons8-rhombus-loader.gif";
 import "./styles.scss";
 
 const LoadingIndicator = () => {
