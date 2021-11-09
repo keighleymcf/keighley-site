@@ -27,7 +27,7 @@ const Contact = () => {
       .sendForm(
         "default_service",
         "template_8dZbJEFv",
-        "#contact-form",
+        "#contactForm",
         process.env.REACT_APP_EMAILJS_USERID
       )
       .then((result) => {
@@ -69,30 +69,20 @@ const Contact = () => {
       {!formSubmitted ? (
         <form
           className="contact-form"
-          id="contact-form"
+          id="contactForm"
           onSubmit={handleSubmit(onSubmit)}
         >
           <label htmlFor="name">
             Your name
             {errors.name && renderErrorMessage()}
           </label>
-          <input
-            name="name"
-            type="text"
-            ref={register({ required: true })}
-            disabled={loading}
-          />
+          <input name="name" type="text" ref={register({ required: true })} />
 
           <label htmlFor="email">
             Your e-mail
             {errors.email && renderErrorMessage()}
           </label>
-          <input
-            name="email"
-            type="email"
-            ref={register({ required: true })}
-            disabled={loading}
-          />
+          <input name="email" type="email" ref={register({ required: true })} />
 
           <label htmlFor="message">
             Your message
@@ -102,7 +92,6 @@ const Contact = () => {
             name="message"
             rows="4"
             ref={register({ required: true })}
-            disabled={loading}
           />
 
           <button type="submit" disabled={loading}>
