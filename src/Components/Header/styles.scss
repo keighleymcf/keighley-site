@@ -50,16 +50,6 @@
   }
 }
 
-.headline {
-  display: flex;
-  align-items: flex-end;
-  line-height: 2rem;
-  height: 150px;
-  :first-child {
-    padding-right: 4px;
-  }
-}
-
 .mobile-menu {
   display: none;
   @media (max-width: $max-width) {

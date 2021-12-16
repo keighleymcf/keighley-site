@@ -5,7 +5,7 @@
   align-items: flex-end;
   line-height: 2rem;
   height: 150px;
-  :first-child {
+  > :first-child {
     padding-right: 4px;
   }
   @media (max-width: $max-width) {
