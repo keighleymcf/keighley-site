@@ -25,7 +25,7 @@
     box-shadow: none;
     &:focus {
       border: 2px solid black;
-      outline: $turquoise solid 2px;
+      outline: $periwinkle solid 2px;
     }
   }
   button {
@@ -64,7 +64,7 @@
   a {
     font-family: $normal;
     font-weight: bold;
-    background-color: $turquoise;
+    background-color: $periwinkle;
     padding: 2px 4px;
   }
 }

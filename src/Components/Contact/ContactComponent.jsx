@@ -48,7 +48,7 @@ const Contact = () => {
 
   return (
     <div className="contact">
-      {loading && <LoadingIndicator />}
+      {!loading && <LoadingIndicator />}
       <h3>Contact</h3>
       {showSubmissionError ? (
         <div className="submission-error">
