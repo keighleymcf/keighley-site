@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import * as github from "../../../assets/icons8-github-30.png";
+import github from "../../../assets/icons8-github-30.png";
 import linkedin from "../../../assets/icons8-linkedin-30.png";
 
 import "./styles.scss";

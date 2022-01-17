@@ -5,7 +5,6 @@ import "./app.scss";
 
 import Header from "./components/views/Header";
 import Main from "./components/views/Main";
-import MainButtons from "./components/views/MainButtons";
 import Footer from "./components/views/Footer";
 import Contact from "./components/views/Contact";
 import References from "./components/views/References";
@@ -25,7 +24,6 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/references" element={<References />} />
               <Route path="/impressum" element={<Impressum />} />
-              <Route path="/" element={<MainButtons />} />
             </Routes>
           </div>
           <Footer />
