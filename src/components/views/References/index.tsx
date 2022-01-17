@@ -5,7 +5,7 @@ import linkedin from "../../../assets/icons8-linkedin-30.png";
 
 import "./styles.scss";
 
-const References = () => (
+const References: React.FC = () => (
   <div className="references">
     <h3>Professional experience and references</h3>
     <section className="references-projects">

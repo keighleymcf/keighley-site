@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
 
-const adjectiveList = [
+const adjectiveList: string[] = [
   "spark",
   "vision",
   "attention to detail",
@@ -16,16 +16,16 @@ const adjectiveList = [
   "structure",
 ];
 
-const Main = () => {
-  const [adjIndex, setAdjIndex] = useState(0);
-
-  const incrementAdjective = () => {
-    if (adjIndex < adjectiveList.length - 1) {
-      setAdjIndex(adjIndex + 1);
-    } else setAdjIndex(0);
-  };
+const Main: React.FC = () => {
+  const [adjIndex, setAdjIndex] = useState<number>(0);
 
   useEffect(() => {
+    const incrementAdjective = () => {
+      if (adjIndex < adjectiveList.length - 1) {
+        setAdjIndex(adjIndex + 1);
+      } else setAdjIndex(0);
+    };
+
     const interval = setInterval(incrementAdjective, 400);
     return () => clearInterval(interval);
   }, [adjIndex]);

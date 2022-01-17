@@ -3,7 +3,7 @@ import monkeyTyping from "../../../../assets/monkey-typing.gif";
 
 import "./styles.scss";
 
-const ContactTYPComponent = () => (
+const ContactTYPComponent: React.FC = () => (
   <div className="contact-typ-container">
     <img
       src={monkeyTyping}

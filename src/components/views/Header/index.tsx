@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './styles.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./styles.scss";
 
-const Header = () => (
+const Header: React.FC = () => (
   <>
     <div className="headerContainer">
       <Link to="/contact" className="link">
@@ -28,7 +28,6 @@ const Header = () => (
       </Link>
     </div>
   </>
-
 );
 
 export default Header;

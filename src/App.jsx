@@ -22,10 +22,10 @@ const App = () => {
             <Header />
             <Main />
             <Routes>
-              <Route path="/contact" element={<Contact />}></Route>
-              <Route path="/references" element={<References />}></Route>
-              <Route path="/impressum" element={<Impressum />}></Route>
-              <Route path="/" element={<MainButtons />}></Route>
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/references" element={<References />} />
+              <Route path="/impressum" element={<Impressum />} />
+              <Route path="/" element={<MainButtons />} />
             </Routes>
           </div>
           <Footer />

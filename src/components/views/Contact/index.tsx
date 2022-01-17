@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import emailjs from "emailjs-com";
 
 import ContactTYP from "./ContactTYP";
-import LoadingIndicator from "../LoadingIndicator";
+import LoadingIndicator from "../../ui/LoadingIndicator";
 
 import "./styles.scss";
 
@@ -12,10 +12,11 @@ const renderErrorMessage = () => (
   <span className="error">This field is required</span>
 );
 
-const Contact = () => {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [showSubmissionError, setShowSubmissionError] = useState(false);
-  const [loading, setLoading] = useState(false);
+const Contact: React.FC = () => {
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [showSubmissionError, setShowSubmissionError] =
+    useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const { register, handleSubmit, errors } = useForm();
 
@@ -87,7 +88,7 @@ const Contact = () => {
           </label>
           <textarea
             name="message"
-            rows="4"
+            rows={4}
             ref={register({ required: true })}
           />
 

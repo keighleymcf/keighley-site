@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import github from "../../../assets/icons8-github-30.png";
+import * as github from "../../../assets/icons8-github-30.png";
 import linkedin from "../../../assets/icons8-linkedin-30.png";
 
 import "./styles.scss";
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <footer className="footer">
     <span>© Keighley McFarland 2022</span>
     <Link to="/impressum" className="impressum-footer">
