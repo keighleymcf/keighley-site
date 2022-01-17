@@ -1,15 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { IntlProvider } from "react-intl";
 import "./app.scss";
 
-import Header from "./Components/Header";
-import Main from "./Components/Main";
-import MainButtons from "./Components/MainButtons";
-import Footer from "./Components/Footer";
-import Contact from "./Components/Contact";
-import References from "./Components/References";
-import Impressum from "./Components/Impressum";
+import Header from "./components/views/Header";
+import Main from "./components/views/Main";
+import MainButtons from "./components/views/MainButtons";
+import Footer from "./components/views/Footer";
+import Contact from "./components/views/Contact";
+import References from "./components/views/References";
+import Impressum from "./components/views/Impressum";
 
 const App = () => {
   const locale = "en";
@@ -21,20 +21,12 @@ const App = () => {
           <div className="main-content">
             <Header />
             <Main />
-            <Switch>
-              <Route path="/contact">
-                <Contact />
-              </Route>
-              <Route path="/references">
-                <References />
-              </Route>
-              <Route path="/impressum">
-                <Impressum />
-              </Route>
-              <Route path="/">
-                <MainButtons />
-              </Route>
-            </Switch>
+            <Routes>
+              <Route path="/contact" element={<Contact />}></Route>
+              <Route path="/references" element={<References />}></Route>
+              <Route path="/impressum" element={<Impressum />}></Route>
+              <Route path="/" element={<MainButtons />}></Route>
+            </Routes>
           </div>
           <Footer />
         </div>

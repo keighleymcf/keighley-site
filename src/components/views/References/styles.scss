@@ -1,0 +1,30 @@
+@import "../../../assets/variables";
+
+.references {
+  margin-bottom: 24px;
+}
+
+.references-socials,
+.references-projects {
+  display: flex;
+  flex-direction: column;
+}
+
+.references-projects {
+  span {
+    background-color: $periwinkle;
+    font-weight: bold;
+    padding: 0 2px;
+  }
+}
+
+.references-socials {
+  a {
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+  }
+  img {
+    margin-right: 8px;
+  }
+}

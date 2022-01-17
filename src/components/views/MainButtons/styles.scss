@@ -1,0 +1,17 @@
+@import "../../../assets/variables";
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+  @media (max-width: $max-width) {
+    padding: 0 0 24px 0;
+  }
+  > :first-child {
+    margin-right: calc(15% + 16px);
+    @media (max-width: $max-width) {
+      margin-right: calc(5% + 16px);
+    }
+  }
+}

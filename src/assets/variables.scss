@@ -1,0 +1,24 @@
+//colors
+@font-face {
+  font-family: Aileron;
+  src: url("./aileron.regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: HeliosExt;
+  src: url("./HeliosExt.ttf") format("opentype");
+}
+
+$periwinkle: #b8bbff;
+$shadow: #d1d0d0;
+$darkGrey: #646464;
+
+//screen sizes (max width to mobile styling up to tablet width)
+$max-width: 768px;
+
+//fonts
+$body: "Aileron", Helvetica, Arial, sans-serif;
+$heading: "HeliosExt", Helvetica, Arial, sans-serif;
+
+//footer
+$footer-height: 48px;

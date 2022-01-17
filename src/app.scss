@@ -1,7 +1,7 @@
 @import "./assets/variables";
 
 * {
-  font-family: $normal;
+  font-family: $heading;
   box-sizing: border-box;
 }
 
@@ -12,12 +12,14 @@ body,
   margin: 0;
 }
 
+h1,
+h2,
 h3,
 h4,
 h5,
 a,
 button {
-  text-transform: uppercase;
+  font-family: $heading;
   font-weight: 700;
 }
 
@@ -42,16 +44,6 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-
-.main-content {
-  width: 100%;
-  margin: auto;
-  height: auto;
-  flex: 1;
-  @media (max-width: $max-width) {
-    width: 80%;
-  }
 }
 
 button {
