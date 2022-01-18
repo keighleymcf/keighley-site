@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  font-family: $heading;
+  font-family: $helios;
   font-weight: 700;
   display: flex;
   justify-content: center;
