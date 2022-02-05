@@ -5,6 +5,7 @@ import emailjs from "emailjs-com";
 
 import ContactTYP from "./ContactTYP";
 import LoadingIndicator from "../../ui/LoadingIndicator";
+import { InputField } from "../../ui/InputField";
 import { Button } from "../../ui/Button";
 
 const renderErrorMessage = () => (
@@ -73,19 +74,30 @@ const Contact: React.FC = () => {
             Your name
             {errors.name && renderErrorMessage()}
           </label>
-          <input name="name" type="text" ref={register({ required: true })} />
+          <InputField
+            variant="input"
+            name="name"
+            type="text"
+            ref={register({ required: true })}
+          />
 
           <label htmlFor="email">
             Your e-mail
             {errors.email && renderErrorMessage()}
           </label>
-          <input name="email" type="email" ref={register({ required: true })} />
+          <InputField
+            variant="input"
+            name="email"
+            type="email"
+            ref={register({ required: true })}
+          />
 
           <label htmlFor="message">
             Your message
             {errors.message && renderErrorMessage()}
           </label>
-          <textarea
+          <InputField
+            variant="textarea"
             name="message"
             rows={4}
             ref={register({ required: true })}
