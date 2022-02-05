@@ -1,8 +1,12 @@
-@import "./assets/variables";
+@font-face {
+  font-family: HeliosExt;
+  src: url("assets/HeliosExt.ttf") format("opentype");
+}
 
 * {
-  font-family: $helios;
+  font-family: HeliosExt, Helvetica, Arial, sans-serif;
   box-sizing: border-box;
+  font-size: 10px;
 }
 
 html,
@@ -10,8 +14,10 @@ body,
 #root {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
+/*
 h1,
 h2,
 h3,
@@ -45,3 +51,4 @@ p {
   flex-direction: column;
   justify-content: flex-start;
 }
+*/

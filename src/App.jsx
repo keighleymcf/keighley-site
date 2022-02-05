@@ -1,7 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-import "./app.scss";
+import "./app.css";
+import { ThemeProvider } from "styled-components";
+
+import { theme } from "./theme/theme";
 
 import Header from "./components/views/Header";
 import Main from "./components/views/Main";
@@ -15,20 +18,22 @@ const App = () => {
 
   return (
     <IntlProvider locale={locale}>
-      <Router>
-        <div className="App">
-          <div className="main-content">
-            <Header />
-            <Main />
-            <Routes>
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/references" element={<References />} />
-              <Route path="/impressum" element={<Impressum />} />
-            </Routes>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <div className="App">
+            <div className="main-content">
+              <Header />
+              <Main />
+              <Routes>
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/references" element={<References />} />
+                <Route path="/impressum" element={<Impressum />} />
+              </Routes>
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-      </Router>
+        </Router>
+      </ThemeProvider>
     </IntlProvider>
   );
 };

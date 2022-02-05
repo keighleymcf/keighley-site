@@ -5,8 +5,7 @@ import emailjs from "emailjs-com";
 
 import ContactTYP from "./ContactTYP";
 import LoadingIndicator from "../../ui/LoadingIndicator";
-
-import "./styles.scss";
+import { Button } from "../../ui/Button";
 
 const renderErrorMessage = () => (
   <span className="error">This field is required</span>
@@ -92,9 +91,9 @@ const Contact: React.FC = () => {
             ref={register({ required: true })}
           />
 
-          <button type="submit" disabled={loading}>
+          <Button type="submit" disabled={loading}>
             Submit
-          </button>
+          </Button>
           <p className="consent">
             {`By clicking "Submit", you confirm that you have read and agree to
             the `}
