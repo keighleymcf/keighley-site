@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
     <div className="contact">
       {loading && <LoadingIndicator />}
       <h3>Contact</h3>
-      {showSubmissionError ? (
+      {!showSubmissionError ? (
         <div className="submission-error">
           <h4>Oh no!</h4>
           <img

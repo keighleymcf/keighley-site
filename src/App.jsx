@@ -6,12 +6,12 @@ import { ThemeProvider } from "styled-components";
 
 import { theme } from "./theme/theme";
 
-import Header from "./components/views/Header";
-import Main from "./components/views/Main";
-import Footer from "./components/views/Footer";
-import Contact from "./components/views/Contact";
-import References from "./components/views/References";
-import Impressum from "./components/views/Impressum";
+import Header from "./components/pages/Header";
+import Main from "./components/pages/Main";
+import Footer from "./components/pages/Footer";
+import Contact from "./components/pages/Contact";
+import References from "./components/pages/References";
+import Impressum from "./components/pages/Impressum";
 
 const App = () => {
   const locale = "en";
