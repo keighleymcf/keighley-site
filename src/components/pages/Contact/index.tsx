@@ -5,12 +5,9 @@ import emailjs from "emailjs-com";
 
 import ContactTYP from "./ContactTYP";
 import LoadingIndicator from "../../ui/LoadingIndicator";
-import { InputField } from "../../ui/InputField";
+import { TextField, TextareaField } from "../../ui/FormInputs";
 import { Button } from "../../ui/Button";
-
-const renderErrorMessage = () => (
-  <span className="error">This field is required</span>
-);
+import { FieldError } from "../../ui/FieldError";
 
 const Contact: React.FC = () => {
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
@@ -72,35 +69,23 @@ const Contact: React.FC = () => {
         >
           <label htmlFor="name">
             Your name
-            {errors.name && renderErrorMessage()}
+            {errors.name && <FieldError />}
           </label>
-          <InputField
-            variant="input"
-            name="name"
-            type="text"
-            ref={register({ required: true })}
-          />
+          <TextField type="text" {...register("name", { required: true })} />
 
           <label htmlFor="email">
             Your e-mail
-            {errors.email && renderErrorMessage()}
+            {errors.email && <FieldError />}
           </label>
-          <InputField
-            variant="input"
-            name="email"
-            type="email"
-            ref={register({ required: true })}
-          />
+          <TextField type="email" {...register("email", { required: true })} />
 
           <label htmlFor="message">
             Your message
-            {errors.message && renderErrorMessage()}
+            {errors.message && <FieldError />}
           </label>
-          <InputField
-            variant="textarea"
-            name="message"
+          <TextareaField
             rows={4}
-            ref={register({ required: true })}
+            {...register("message", { required: true })}
           />
 
           <Button type="submit" disabled={loading}>

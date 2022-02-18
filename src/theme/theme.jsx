@@ -2,6 +2,7 @@ const palette = {
   periwinkle: "#b8bbff",
   shadow: "#d1d0d0",
   darkGrey: "#646464",
+  red: "#ff0100",
 };
 
 const breakpoints = {
