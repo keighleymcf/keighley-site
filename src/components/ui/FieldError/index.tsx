@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 const StyledErrorMessage = styled.span`
   color: ${(props) => props.theme.palette.red};
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-size: 1.6rem;
   padding-left: 8px;
 `;
 

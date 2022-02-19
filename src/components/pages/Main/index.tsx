@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
 
+import { Text } from "../../ui/Text";
+
 const adjectiveList: string[] = [
   "spark",
   "vision",
@@ -32,22 +34,22 @@ const Main: React.FC = () => {
 
   return (
     <div className="Main">
-      <h2 className="headline">
+      <Text variant="h4">
         Full-stack web development with {adjectiveList[adjIndex]}
-      </h2>
+      </Text>
       <section className="description-main">
-        <p>
+        <Text variant="p">
           I am a full-stack web developer specialised in Javascript, React,
           Typescript, and Node.js based in Vienna
-        </p>
-        <p>
+        </Text>
+        <Text variant="p">
           In my previous life, I was a project manager and science
           communications specialist
-        </p>
-        <p>
+        </Text>
+        <Text variant="p">
           I love building high-quality, memorable digital products that make
           users' and clients' lives better
-        </p>
+        </Text>
       </section>
     </div>
   );

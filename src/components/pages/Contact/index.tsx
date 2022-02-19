@@ -3,11 +3,12 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import emailjs from "emailjs-com";
 
+import RonSign from "../../../assets/ron-poop-sign.gif";
 import ContactTYP from "./ContactTYP";
 import LoadingIndicator from "../../ui/LoadingIndicator";
 import { TextField, TextareaField } from "../../ui/FormInputs";
 import { Button } from "../../ui/Button";
-import { FieldError } from "../../ui/FieldError";
+import { Text } from "../../ui/Text";
 
 const Contact: React.FC = () => {
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
@@ -45,17 +46,17 @@ const Contact: React.FC = () => {
   return (
     <div className="contact">
       {loading && <LoadingIndicator />}
-      <h3>Contact</h3>
-      {!showSubmissionError ? (
+      <Text variant="h3">Contact</Text>
+      {showSubmissionError ? (
         <div className="submission-error">
-          <h4>Oh no!</h4>
+          <Text variant="h4">Oh no!</Text>
           <img
-            src="../../../assets/ron-poop-sign.gif"
+            src={RonSign}
             alt="Ron Swanson holding up a light sign that says 'poop' - source Giphy"
           />
-          <p>Something went wrong</p>
-          <p>Please try again later</p>
-          <p>or send an email the regular way to</p>
+          <Text variant="p">Something went wrong</Text>
+          <Text variant="p">Please try again later</Text>
+          <Text variant="p">or send an email the regular way to</Text>
           <a href="mailto:contact@keighleymcfarland.me">
             contact@keighleymcfarland.me
           </a>
@@ -67,38 +68,39 @@ const Contact: React.FC = () => {
           id="contactForm"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <label htmlFor="name">
-            Your name
-            {errors.name && <FieldError />}
-          </label>
-          <TextField type="text" {...register("name", { required: true })} />
-
-          <label htmlFor="email">
-            Your e-mail
-            {errors.email && <FieldError />}
-          </label>
-          <TextField type="email" {...register("email", { required: true })} />
-
-          <label htmlFor="message">
-            Your message
-            {errors.message && <FieldError />}
-          </label>
+          <TextField
+            label="Your name"
+            type="text"
+            name="name"
+            error={errors.name}
+            {...register("name", { required: true })}
+          />
+          <TextField
+            label="Your e-mail"
+            type="email"
+            name="email"
+            error={errors.email}
+            {...register("email", { required: true })}
+          />
           <TextareaField
+            label="Your message"
             rows={4}
+            name="message"
+            error={errors.message}
             {...register("message", { required: true })}
           />
 
           <Button type="submit" disabled={loading}>
             Submit
           </Button>
-          <p className="consent">
+          <Text variant="pFinePrint">
             {`By clicking "Submit", you confirm that you have read and agree to
             the `}
             <Link to="/impressum#terms">
               information and terms in the impressum and privacy policy
               (Datenschutzerklärung)
             </Link>
-          </p>
+          </Text>
         </form>
       ) : (
         <ContactTYP />

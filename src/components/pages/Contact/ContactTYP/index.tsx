@@ -1,7 +1,7 @@
 import React from "react";
 import monkeyTyping from "../../../../assets/monkey-typing.gif";
 
-import "./styles.scss";
+import { Text } from "../../../ui/Text";
 
 const ContactTYPComponent: React.FC = () => (
   <div className="contact-typ-container">
@@ -9,8 +9,8 @@ const ContactTYPComponent: React.FC = () => (
       src={monkeyTyping}
       alt="Monkey with a headset phone typing at a computer - source Giphy"
     />
-    <h3>Thanks for contacting me!</h3>
-    <p>I'll respond as soon as I can</p>
+    <Text variant="h3">Thanks for contacting me!</Text>
+    <Text variant="p">I'll respond as soon as I can</Text>
   </div>
 );
 
