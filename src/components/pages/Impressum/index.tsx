@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./styles.scss";
-
 const Footer = () => (
   <div className="impressum">
     <h3>Impressum / Legal Disclosure</h3>

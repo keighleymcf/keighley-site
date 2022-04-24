@@ -8,7 +8,7 @@ type ExternalLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 const LinkStyles = css`
   text-decoration: none;
   color: black;
-  font-size: 2rem;
+  font-size: 1rem;
   cursor: pointer;
 `;
 

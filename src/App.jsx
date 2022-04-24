@@ -6,9 +6,8 @@ import { ThemeProvider } from "styled-components";
 
 import { theme } from "./theme/theme";
 
-import Header from "./components/pages/Header";
+import { Layout } from "./components/ui/Layout";
 import Main from "./components/pages/Main";
-import Footer from "./components/pages/Footer";
 import Contact from "./components/pages/Contact";
 import References from "./components/pages/References";
 import Impressum from "./components/pages/Impressum";
@@ -20,18 +19,14 @@ const App = () => {
     <IntlProvider locale={locale}>
       <ThemeProvider theme={theme}>
         <Router>
-          <div className="App">
-            <div className="main-content">
-              <Header />
-              <Main />
-              <Routes>
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/references" element={<References />} />
-                <Route path="/impressum" element={<Impressum />} />
-              </Routes>
-            </div>
-            <Footer />
-          </div>
+          <Layout>
+            <Routes>
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/references" element={<References />} />
+              <Route path="/impressum" element={<Impressum />} />
+              <Route path="/" element={<Main />} />
+            </Routes>
+          </Layout>
         </Router>
       </ThemeProvider>
     </IntlProvider>

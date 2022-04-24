@@ -1,33 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./styles.scss";
+import styled from "styled-components";
 
-const Header: React.FC = () => (
-  <>
-    <div className="headerContainer">
-      <Link to="/contact" className="link">
-        Contact
-        <div className="link-underline" />
-      </Link>
-      <Link to="/">
-        <h1 className="headerName">Keighley McFarland</h1>
-      </Link>
-      <Link to="/references" className="link">
-        References
-        <div className="link-underline" />
-      </Link>
-    </div>
-    <div className="mobile-menu">
-      <Link to="/contact" className="mobile-link">
-        Contact
-        <div className="link-underline" />
-      </Link>
-      <Link to="/references" className="mobile-link">
-        References
-        <div className="link-underline" />
-      </Link>
-    </div>
-  </>
+import { InternalLink } from "src/components/ui/Link";
+
+const HeaderContainer = styled.div`
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 24px 0 16px;
+  > :not(:last-child) {
+    padding-right: 16px;
+  }
+  border-bottom: 4px solid ${(props) => props.theme.palette.periwinkle};
+`;
+
+export const Header: React.FC = () => (
+  <HeaderContainer>
+    <InternalLink to="/">Keighley McFarland</InternalLink>
+    <InternalLink to="/contact" className="link">
+      Contact
+    </InternalLink>
+    <InternalLink to="/references" className="link">
+      References
+    </InternalLink>
+  </HeaderContainer>
 );
-
-export default Header;

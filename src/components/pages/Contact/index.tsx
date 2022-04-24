@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
           </a>
         </div>
       ) : null}
-      {!formSubmitted ? (
+      {formSubmitted ? (
         <form
           className="contact-form"
           id="contactForm"

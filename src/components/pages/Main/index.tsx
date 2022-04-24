@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./styles.scss";
 
 import { Text } from "../../ui/Text";
 
@@ -28,7 +27,7 @@ const Main: React.FC = () => {
       } else setAdjIndex(0);
     };
 
-    const interval = setInterval(incrementAdjective, 400);
+    const interval = setInterval(incrementAdjective, 800);
     return () => clearInterval(interval);
   }, [adjIndex]);
 

@@ -1,8 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import * as animationData from "../../../assets/loading-tetris.json";
-
-import "./styles.scss";
+import * as animationData from "../../../assets/loader.json";
 
 const LoadingIndicator = () => {
   const defaultOptions = {
