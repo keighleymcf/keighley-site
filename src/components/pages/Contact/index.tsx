@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import emailjs from "emailjs-com";
 
 import RonSign from "../../../assets/ron-poop-sign.gif";
 import ContactTYP from "./ContactTYP";
-import LoadingIndicator from "../../ui/LoadingIndicator";
 import { TextField, TextareaField } from "../../ui/FormInputs";
 import { Button } from "../../ui/Button";
 import { Text } from "../../ui/Text";
+import { InternalLink, ExternalLink } from "../../ui/Link";
 
 const Contact: React.FC = () => {
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
@@ -44,11 +43,10 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="contact">
-      {loading && <LoadingIndicator />}
+    <section className="contact">
       <Text variant="h3">Contact</Text>
       {showSubmissionError ? (
-        <div className="submission-error">
+        <section id="submission-error">
           <Text variant="h4">Oh no!</Text>
           <img
             src={RonSign}
@@ -57,12 +55,12 @@ const Contact: React.FC = () => {
           <Text variant="p">Something went wrong</Text>
           <Text variant="p">Please try again later</Text>
           <Text variant="p">or send an email the regular way to</Text>
-          <a href="mailto:contact@keighleymcfarland.me">
+          <ExternalLink href="mailto:contact@keighleymcfarland.me">
             contact@keighleymcfarland.me
-          </a>
-        </div>
+          </ExternalLink>
+        </section>
       ) : null}
-      {formSubmitted ? (
+      {!formSubmitted ? (
         <form
           className="contact-form"
           id="contactForm"
@@ -90,22 +88,24 @@ const Contact: React.FC = () => {
             {...register("message", { required: true })}
           />
 
-          <Button type="submit" disabled={loading}>
+          <Button type="submit" loading={loading}>
             Submit
           </Button>
           <Text variant="pFinePrint">
             {`By clicking "Submit", you confirm that you have read and agree to
             the `}
-            <Link to="/impressum#terms">
-              information and terms in the impressum and privacy policy
-              (Datenschutzerklärung)
-            </Link>
+            <InternalLink to="/impressum#terms">
+              <Text variant="pFinePrint">
+                information and terms in the impressum and privacy policy
+                (Datenschutzerklärung)
+              </Text>
+            </InternalLink>
           </Text>
         </form>
       ) : (
         <ContactTYP />
       )}
-    </div>
+    </section>
   );
 };
 

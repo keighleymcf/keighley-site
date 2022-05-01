@@ -12,7 +12,6 @@ const HeaderContainer = styled.header`
   > :not(:last-child) {
     padding-right: 16px;
   }
-  border-bottom: 4px solid ${(props) => props.theme.palette.periwinkle};
 `;
 
 export const Header: React.FC = () => (

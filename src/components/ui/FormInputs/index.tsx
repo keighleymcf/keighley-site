@@ -1,15 +1,12 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 import styled, { css } from "styled-components";
 import { FieldError } from "../../ui/FieldError";
 
 const fieldStyles = css`
   margin-bottom: 16px;
   padding: 8px;
-  font-size: 1.6rem;
-  line-height: 1.8rem;
   border: 2px solid black;
-  border-radius: 0;
+  border-radius: 4px;
   box-shadow: none;
   &:focus {
     border: 2px solid black;
@@ -28,11 +25,6 @@ const LabelContainer = styled.div`
   margin: 8px 0;
 `;
 
-const StyledLabel = styled.label`
-  font-size: 1.8rem;
-  font-weight: 300;
-`;
-
 const StyledInputField = styled.input`
   ${fieldStyles}
 `;
@@ -48,7 +40,7 @@ type TextFieldProps = BaseInputProps &
 const Label = ({ label, error, name }: BaseInputProps) => {
   return (
     <LabelContainer>
-      <StyledLabel htmlFor={name}>{label}</StyledLabel>
+      <label htmlFor={name}>{label}</label>
       {error && <FieldError />}
     </LabelContainer>
   );

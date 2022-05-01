@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { LoadingIndicator } from "../LoadingIndicator";
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  loading: boolean;
+};
 
 const StyledButton = styled.button<ButtonProps>`
   font-weight: 700;
@@ -9,34 +12,33 @@ const StyledButton = styled.button<ButtonProps>`
   justify-content: center;
   align-items: center;
 
-  padding: 12px 18px;
-  margin: 8px;
-  font-size: 1.8rem;
-  background-color: white;
-  border: solid black 4px;
-  box-shadow: ${(props) => props.theme.palette.shadow} -6px 6px;
+  padding: ${(props) => (props.loading ? "0" : "12px")};
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 4px;
   cursor: pointer;
+  width: 200px;
 
   &:hover {
-    box-shadow: ${(props) => props.theme.palette.periwinkle} -6px 6px;
+    border-color: ${(props) => props.theme.palette.periwinkle};
   }
   &:focus {
     outline: none;
-    box-shadow: ${(props) => props.theme.palette.periwinkle} -6px 6px;
+    border-color: ${(props) => props.theme.palette.periwinkle};
   }
   &:active {
-    transform: translate(-2px, 2px);
-    box-shadow: ${(props) => props.theme.palette.periwinkle} -4px 4px;
+    border-color: ${(props) => props.theme.palette.periwinkleLight};
   }
   &:disabled {
     background-color: ${(props) => props.theme.palette.shadow};
     color: ${(props) => props.theme.palette.darkGrey};
     border-color: ${(props) => props.theme.palette.darkGrey};
-    box-shadow: ${(props) => props.theme.palette.shadow} -6px 6px;
     cursor: not-allowed;
   }
 `;
 
-export const Button = ({ children, ...props }: ButtonProps) => (
-  <StyledButton {...props}>{children}</StyledButton>
+export const Button = ({ children, loading, ...props }: ButtonProps) => (
+  <StyledButton loading={loading} {...props}>
+    {loading ? <LoadingIndicator /> : children}
+  </StyledButton>
 );

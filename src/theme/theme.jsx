@@ -4,6 +4,7 @@ const palette = {
   shadow: "#d1d0d0",
   darkGrey: "#646464",
   red: "#ff0100",
+  black: "#000",
 };
 
 const breakpoints = {

@@ -2,7 +2,7 @@ import React from "react";
 import Lottie from "react-lottie";
 import * as animationData from "../../../assets/loader.json";
 
-const LoadingIndicator = () => {
+export const LoadingIndicator = () => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -12,7 +12,5 @@ const LoadingIndicator = () => {
     },
   };
 
-  return <Lottie options={defaultOptions} height={400} width={400} />;
+  return <Lottie options={defaultOptions} height={36} width={200} />;
 };
-
-export default LoadingIndicator;
