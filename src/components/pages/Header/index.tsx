@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { InternalLink } from "src/components/ui/Link";
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
   display: flex;
   align-self: flex-end;
   justify-content: flex-end;

@@ -30,11 +30,11 @@ const IconContainer = styled.div`
 export const Footer: React.FC = () => (
   <FooterContainer>
     <Text variant="pFinePrint">© Keighley McFarland 2022</Text>
-    <InternalLink to="/impressum" className="impressum-footer">
+    <InternalLink to="/impressum">
       <Text variant="pFinePrint">Impressum</Text>
     </InternalLink>
     <IconContainer>
-      <InternalLink to="/contact" className="contact-footer">
+      <InternalLink to="/contact">
         <Text variant="pFinePrint">Contact</Text>
       </InternalLink>
       <ExternalLink href="https://github.com/keighleymcf">

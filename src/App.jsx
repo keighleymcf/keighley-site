@@ -10,7 +10,7 @@ import { Layout } from "./components/ui/Layout";
 import Main from "./components/pages/Main";
 import Contact from "./components/pages/Contact";
 import References from "./components/pages/References";
-import Impressum from "./components/pages/Impressum";
+import { Impressum } from "./components/pages/Impressum";
 
 const App = () => {
   const locale = "en";
