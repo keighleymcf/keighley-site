@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
-const StyledErrorMessage = styled.span`
+import { Text } from "../Text";
+
+const StyledErrorMessage = styled(Text)`
   color: ${(props) => props.theme.palette.red};
-  font-size: 1.6rem;
   padding-left: 8px;
 `;
 
 export const FieldError = () => {
-  return <StyledErrorMessage>This field is required</StyledErrorMessage>;
+  return (
+    <StyledErrorMessage variant="p">This field is required</StyledErrorMessage>
+  );
 };

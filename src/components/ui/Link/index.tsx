@@ -7,11 +7,14 @@ import Underline3 from "../../../assets/underline-3.svg";
 import Underline4 from "../../../assets/underline-4.svg";
 import Underline5 from "../../../assets/underline-5.svg";
 
-type InternalLinkProps = LinkProps;
-type ExternalLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+type BaseLinkProps = { hideUnderline?: boolean };
+type InternalLinkProps = LinkProps & BaseLinkProps;
+type ExternalLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
+  BaseLinkProps;
 
 const StyledUnderline = styled.img`
   max-width: 100%;
+  width: 100%;
 `;
 
 const LinkStyles = css`
@@ -22,6 +25,9 @@ const LinkStyles = css`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 8px;
+  background: url(src/assets/underline-1.svg) bottom center no-repeat;
+  background-size: contain;
   :hover,
   :focus {
     ${StyledUnderline} {
@@ -56,16 +62,24 @@ const LinkUnderline = () => {
   );
 };
 
-export const InternalLink = ({ children, ...props }: InternalLinkProps) => (
+export const InternalLink = ({
+  hideUnderline,
+  children,
+  ...props
+}: InternalLinkProps) => (
   <StyledInternalLink {...props}>
     {children}
-    <LinkUnderline />
+    {!hideUnderline && <LinkUnderline />}
   </StyledInternalLink>
 );
 
-export const ExternalLink = ({ children, ...props }: ExternalLinkProps) => (
+export const ExternalLink = ({
+  hideUnderline,
+  children,
+  ...props
+}: ExternalLinkProps) => (
   <StyledExternalLink {...props}>
     {children}
-    <LinkUnderline />
+    {!hideUnderline && <LinkUnderline />}{" "}
   </StyledExternalLink>
 );

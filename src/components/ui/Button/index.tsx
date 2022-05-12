@@ -7,17 +7,17 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const StyledButton = styled.button<ButtonProps>`
-  font-weight: 700;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  padding: ${(props) => (props.loading ? "0" : "12px")};
+  padding: 0;
   background-color: transparent;
   border: 2px solid black;
   border-radius: 4px;
   cursor: pointer;
   width: 200px;
+  height: 52px;
 
   &:hover {
     border-color: ${(props) => props.theme.palette.periwinkle};

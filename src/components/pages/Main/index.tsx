@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
 import { Text } from "../../ui/Text";
+
+const HeroContainer = styled.div`
+  height: 400px;
+`;
 
 const adjectiveList: string[] = [
   "spark",
@@ -32,11 +37,15 @@ const Main: React.FC = () => {
   }, [adjIndex]);
 
   return (
-    <div className="Main">
-      <Text variant="h4">
-        Full-stack web development with {adjectiveList[adjIndex]}
-      </Text>
-      <section className="description-main">
+    <div id="main">
+      <HeroContainer>
+        <Text variant="h1">
+          Full-stack web development with <br />
+          {adjectiveList[adjIndex]}
+        </Text>
+      </HeroContainer>
+
+      <section id="description-main">
         <Text variant="p">
           I am a full-stack web developer specialised in Javascript, React,
           Typescript, and Node.js based in Vienna

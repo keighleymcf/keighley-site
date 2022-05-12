@@ -4,7 +4,7 @@ type TextProps = { variant: "h1" | "h2" | "h3" | "h4" | "p" | "pFinePrint" };
 
 const variants = {
   h1: css`
-    font-size: 4rem;
+    font-size: 2.8rem;
     font-weight: 700;
   `,
   h2: css`
@@ -22,6 +22,7 @@ const variants = {
   p: css`
     font-size: 1rem;
     font-weight: 300;
+    margin: 0;
     > span {
       font-size: 0.8rem;
       background-color: ${(props) => props.theme.palette.periwinkleLight};

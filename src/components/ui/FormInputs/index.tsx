@@ -1,4 +1,5 @@
 import React from "react";
+import { FieldError as ReactHookFormFieldError } from "react-hook-form";
 import styled, { css } from "styled-components";
 import { FieldError } from "../../ui/FieldError";
 
@@ -31,7 +32,7 @@ const StyledInputField = styled.input`
 
 type BaseInputProps = {
   label: string;
-  error: string;
+  error: ReactHookFormFieldError | undefined;
   name: string;
 };
 type TextFieldProps = BaseInputProps &

@@ -15,7 +15,13 @@ const Contact: React.FC = () => {
     useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const { register, handleSubmit, errors } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: { name: "", email: "", message: "" },
+  });
 
   const sendEmail = () => {
     setLoading(true);
@@ -39,6 +45,8 @@ const Contact: React.FC = () => {
   };
 
   const onSubmit = () => {
+    setLoading(true);
+
     sendEmail();
   };
 
@@ -69,21 +77,18 @@ const Contact: React.FC = () => {
           <TextField
             label="Your name"
             type="text"
-            name="name"
             error={errors.name}
             {...register("name", { required: true })}
           />
           <TextField
             label="Your e-mail"
             type="email"
-            name="email"
             error={errors.email}
             {...register("email", { required: true })}
           />
           <TextareaField
             label="Your message"
             rows={4}
-            name="message"
             error={errors.message}
             {...register("message", { required: true })}
           />
@@ -94,7 +99,7 @@ const Contact: React.FC = () => {
           <Text variant="pFinePrint">
             {`By clicking "Submit", you confirm that you have read and agree to
             the `}
-            <InternalLink to="/impressum#terms">
+            <InternalLink to="/impressum#terms" hideUnderline>
               <Text variant="pFinePrint">
                 information and terms in the impressum and privacy policy
                 (Datenschutzerklärung)

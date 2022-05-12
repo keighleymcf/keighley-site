@@ -12,5 +12,5 @@ export const LoadingIndicator = () => {
     },
   };
 
-  return <Lottie options={defaultOptions} height={36} width={200} />;
+  return <Lottie options={defaultOptions} height={52} width={200} />;
 };
