@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 import RonSign from "../../../assets/ron-poop-sign.gif";
 import ContactTYP from "./ContactTYP";
