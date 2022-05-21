@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { Formik, Form } from "formik";
 import emailjs from "@emailjs/browser";
+import * as Yup from "yup";
 
 import RonSign from "../../../assets/ron-poop-sign.gif";
 import ContactTYP from "./ContactTYP";
@@ -9,19 +10,17 @@ import { Button } from "../../ui/Button";
 import { Text } from "../../ui/Text";
 import { InternalLink, ExternalLink } from "../../ui/Link";
 
+const validationSchema = Yup.object().shape({
+  name: Yup.string().required().label("Name"),
+  email: Yup.string().email().required().label("E-mail"),
+  message: Yup.string().required().label("Message"),
+});
+
 const Contact: React.FC = () => {
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const [showSubmissionError, setShowSubmissionError] =
     useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    defaultValues: { name: "", email: "", message: "" },
-  });
 
   const sendEmail = () => {
     setLoading(true);
@@ -45,8 +44,8 @@ const Contact: React.FC = () => {
   };
 
   const onSubmit = () => {
+    console.log("submit");
     setLoading(true);
-
     sendEmail();
   };
 
@@ -69,44 +68,55 @@ const Contact: React.FC = () => {
         </section>
       ) : null}
       {!formSubmitted ? (
-        <form
-          className="contact-form"
-          id="contactForm"
-          onSubmit={handleSubmit(onSubmit)}
+        <Formik
+          initialValues={{ name: "", email: "", message: "" }}
+          onSubmit={onSubmit}
+          validationSchema={validationSchema}
         >
-          <TextField
-            label="Your name"
-            type="text"
-            error={errors.name}
-            {...register("name", { required: true })}
-          />
-          <TextField
-            label="Your e-mail"
-            type="email"
-            error={errors.email}
-            {...register("email", { required: true })}
-          />
-          <TextareaField
-            label="Your message"
-            rows={4}
-            error={errors.message}
-            {...register("message", { required: true })}
-          />
+          {({ errors, dirty, values }) => {
+            console.log(values);
+            return (
+              <Form className="contact-form" id="contactForm">
+                <TextField
+                  name="name"
+                  label="Your name"
+                  type="text"
+                  error={errors.name}
+                />
+                <TextField
+                  name="email"
+                  label="Your e-mail"
+                  type="email"
+                  error={errors.email}
+                />
+                <TextareaField
+                  name="message"
+                  label="Your message"
+                  rows={4}
+                  error={errors.message}
+                />
 
-          <Button type="submit" loading={loading}>
-            Submit
-          </Button>
-          <Text variant="pFinePrint">
-            {`By clicking "Submit", you confirm that you have read and agree to
+                <Button
+                  type="submit"
+                  loading={loading}
+                  disabled={!Object.keys(errors).length || !dirty}
+                >
+                  Submit
+                </Button>
+                <Text variant="pFinePrint">
+                  {`By clicking "Submit", you confirm that you have read and agree to
             the `}
-            <InternalLink to="/impressum#terms" hideUnderline>
-              <Text variant="pFinePrint">
-                information and terms in the impressum and privacy policy
-                (Datenschutzerklärung)
-              </Text>
-            </InternalLink>
-          </Text>
-        </form>
+                  <InternalLink to="/impressum#terms" hideUnderline>
+                    <Text variant="pFinePrint">
+                      information and terms in the impressum and privacy policy
+                      (Datenschutzerklärung)
+                    </Text>
+                  </InternalLink>
+                </Text>
+              </Form>
+            );
+          }}
+        </Formik>
       ) : (
         <ContactTYP />
       )}

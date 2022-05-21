@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { LoadingIndicator } from "../LoadingIndicator";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   loading: boolean;
+  disabled: boolean;
 };
 
-const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled.button<{ $loading: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,10 +35,25 @@ const StyledButton = styled.button<ButtonProps>`
     border-color: ${(props) => props.theme.palette.darkGrey};
     cursor: not-allowed;
   }
+
+  ${(props) => {
+    return (
+      props.$loading &&
+      `background-image: url("glitter.gif");
+      color: transparent;
+      border-color: ${props.theme.palette.periwinkle};
+    `
+    );
+  }}
 `;
 
-export const Button = ({ children, loading, ...props }: ButtonProps) => (
-  <StyledButton loading={loading} {...props}>
-    {loading ? <LoadingIndicator /> : children}
+export const Button = ({
+  children,
+  loading,
+  disabled,
+  ...props
+}: ButtonProps) => (
+  <StyledButton {...props} $loading={loading}>
+    {loading ? "loading..." : children}
   </StyledButton>
 );

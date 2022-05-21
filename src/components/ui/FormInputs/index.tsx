@@ -1,6 +1,7 @@
 import React from "react";
-import { FieldError as ReactHookFormFieldError } from "react-hook-form";
 import styled, { css } from "styled-components";
+import { Field, FieldProps } from "formik";
+
 import { FieldError } from "../../ui/FieldError";
 
 const fieldStyles = css`
@@ -26,13 +27,13 @@ const LabelContainer = styled.div`
   margin: 8px 0;
 `;
 
-const StyledInputField = styled.input`
+const StyledInputField = styled(Field)`
   ${fieldStyles}
 `;
 
 type BaseInputProps = {
   label: string;
-  error: ReactHookFormFieldError | undefined;
+  error: string | undefined;
   name: string;
 };
 type TextFieldProps = BaseInputProps &
@@ -42,7 +43,7 @@ const Label = ({ label, error, name }: BaseInputProps) => {
   return (
     <LabelContainer>
       <label htmlFor={name}>{label}</label>
-      {error && <FieldError />}
+      {error && <FieldError error={error} />}
     </LabelContainer>
   );
 };
@@ -56,13 +57,14 @@ export const TextField = ({ label, error, ...props }: TextFieldProps) => {
   );
 };
 
-const StyledTextareaField = styled.textarea`
+const StyledTextareaField = styled(Field)`
   ${fieldStyles}
 `;
 
 type TextareaFieldProps = BaseInputProps &
   React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
+//TODO fix field not picking up value
 export const TextareaField = ({
   rows = 1,
   label,
@@ -72,7 +74,7 @@ export const TextareaField = ({
   return (
     <InputFieldContainer>
       <Label label={label} error={error} name={props.name} />
-      <StyledTextareaField rows={rows} {...props} />
+      <StyledTextareaField as="textarea" rows={rows} {...props} />
     </InputFieldContainer>
   );
 };
