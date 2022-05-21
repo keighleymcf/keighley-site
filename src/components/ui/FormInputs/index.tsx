@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Field, FieldProps } from "formik";
+import { Field, FieldProps, useField } from "formik";
 
 import { FieldError } from "../../ui/FieldError";
 
@@ -57,24 +57,27 @@ export const TextField = ({ label, error, ...props }: TextFieldProps) => {
   );
 };
 
-const StyledTextareaField = styled(Field)`
+const StyledTextareaField = styled.textarea`
   ${fieldStyles}
 `;
 
 type TextareaFieldProps = BaseInputProps &
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+  React.TextareaHTMLAttributes<HTMLTextAreaElement> &
+  Partial<FieldProps>;
 
 //TODO fix field not picking up value
 export const TextareaField = ({
+  name,
   rows = 1,
   label,
   error,
   ...props
 }: TextareaFieldProps) => {
+  const [field] = useField(name);
   return (
     <InputFieldContainer>
-      <Label label={label} error={error} name={props.name} />
-      <StyledTextareaField as="textarea" rows={rows} {...props} />
+      <Label label={label} error={error} name={name} />
+      <StyledTextareaField as="textarea" rows={rows} {...field} {...props} />
     </InputFieldContainer>
   );
 };
