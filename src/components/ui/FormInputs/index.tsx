@@ -14,6 +14,12 @@ const fieldStyles = css`
     border: 2px solid black;
     outline: ${(props) => props.theme.palette.periwinkle} solid 2px;
   }
+  &:disabled {
+    color: ${(props) => props.theme.palette.darkGrey};
+    border: 2px solid ${(props) => props.theme.palette.darkGrey};
+    background-color: ${(props) => props.theme.palette.shadow};
+    cursor: not-allowed;
+  }
 `;
 
 const InputFieldContainer = styled.div`

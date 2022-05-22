@@ -3,12 +3,16 @@ import { Formik, Form } from "formik";
 import emailjs from "@emailjs/browser";
 import * as Yup from "yup";
 
-import RonSign from "../../../assets/ron-poop-sign.gif";
-import ContactTYP from "./ContactTYP";
+import { ContactSubmissionMessage } from "./ContactSubmissionMessage";
 import { TextField, TextareaField } from "../../ui/FormInputs";
 import { Button } from "../../ui/Button";
 import { Text } from "../../ui/Text";
-import { InternalLink, ExternalLink } from "../../ui/Link";
+import { InternalLink } from "../../ui/Link";
+
+enum SubmissionStatus {
+  ERROR = "error",
+  SUCCESS = "success",
+}
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().label("Name"),
@@ -17,9 +21,9 @@ const validationSchema = Yup.object().shape({
 });
 
 const Contact: React.FC = () => {
-  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
-  const [showSubmissionError, setShowSubmissionError] =
-    useState<boolean>(false);
+  const [submissionStatus, setSubmissionStatus] = useState<
+    SubmissionStatus | undefined
+  >(undefined);
   const [loading, setLoading] = useState<boolean>(false);
 
   const sendEmail = () => {
@@ -34,17 +38,16 @@ const Contact: React.FC = () => {
       .then((result) => {
         if (result.status === 200) {
           setLoading(false);
-          setFormSubmitted(true);
+          setSubmissionStatus(SubmissionStatus.SUCCESS);
         }
       })
       .catch(() => {
         setLoading(false);
-        setShowSubmissionError(true);
+        setSubmissionStatus(SubmissionStatus.ERROR);
       });
   };
 
   const onSubmit = () => {
-    console.log("submit");
     setLoading(true);
     sendEmail();
   };
@@ -52,29 +55,17 @@ const Contact: React.FC = () => {
   return (
     <section className="contact">
       <Text variant="h3">Contact</Text>
-      {showSubmissionError ? (
-        <section id="submission-error">
-          <Text variant="h4">Oh no!</Text>
-          <img
-            src={RonSign}
-            alt="Ron Swanson holding up a light sign that says 'poop' - source Giphy"
-          />
-          <Text variant="p">Something went wrong</Text>
-          <Text variant="p">Please try again later</Text>
-          <Text variant="p">or send an email the regular way to</Text>
-          <ExternalLink href="mailto:contact@keighleymcfarland.me">
-            contact@keighleymcfarland.me
-          </ExternalLink>
-        </section>
-      ) : null}
-      {!formSubmitted ? (
+      {submissionStatus ? (
+        <ContactSubmissionMessage
+          error={submissionStatus === SubmissionStatus.ERROR}
+        />
+      ) : (
         <Formik
           initialValues={{ name: "", email: "", message: "" }}
           onSubmit={onSubmit}
           validationSchema={validationSchema}
         >
           {({ errors, dirty, values }) => {
-            console.log(values);
             return (
               <Form className="contact-form" id="contactForm">
                 <TextField
@@ -82,18 +73,21 @@ const Contact: React.FC = () => {
                   label="Your name"
                   type="text"
                   error={errors.name}
+                  disabled={loading}
                 />
                 <TextField
                   name="email"
                   label="Your e-mail"
                   type="email"
                   error={errors.email}
+                  disabled={loading}
                 />
                 <TextareaField
                   name="message"
                   label="Your message"
                   rows={4}
                   error={errors.message}
+                  disabled={loading}
                 />
 
                 <Button
@@ -117,8 +111,6 @@ const Contact: React.FC = () => {
             );
           }}
         </Formik>
-      ) : (
-        <ContactTYP />
       )}
     </section>
   );

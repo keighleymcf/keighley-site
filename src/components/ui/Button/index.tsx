@@ -42,6 +42,7 @@ const StyledButton = styled.button<{ $loading: boolean }>`
       `background-image: url("glitter.gif");
       color: transparent;
       border-color: ${props.theme.palette.periwinkle};
+      cursor: not-allowed;
     `
     );
   }}
