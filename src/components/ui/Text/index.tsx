@@ -34,6 +34,7 @@ const variants = {
     font-size: 0.6rem;
     font-weight: 300;
     line-height: 0.8rem;
+    margin: 0;
   `,
 };
 

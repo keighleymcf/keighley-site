@@ -12,12 +12,19 @@ type InternalLinkProps = LinkProps & BaseLinkProps;
 type ExternalLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
   BaseLinkProps;
 
-const StyledUnderline = styled.img`
-  max-width: 100%;
+const UnderlineContainer = styled.div`
   width: 100%;
+  max-width: 100%;
+  height: 16px;
+`;
+
+const StyledUnderline = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 
 const LinkStyles = css`
+  width: min-content;
   text-decoration: none;
   color: ${(props) => props.theme.palette.black};
   font-size: 1rem;
@@ -25,9 +32,6 @@ const LinkStyles = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 8px;
-  background: url(src/assets/underline-1.svg) bottom center no-repeat;
-  background-size: contain;
   :hover,
   :focus {
     ${StyledUnderline} {
@@ -37,11 +41,11 @@ const LinkStyles = css`
   }
 `;
 
-const StyledInternalLink = styled(Link)`
+const StyledInternalLink = styled(Link)<InternalLinkProps>`
   ${LinkStyles}
 `;
 
-const StyledExternalLink = styled.a`
+const StyledExternalLink = styled.a<ExternalLinkProps>`
   ${LinkStyles}
 `;
 
@@ -55,10 +59,12 @@ const LinkUnderline = () => {
   ];
 
   return (
-    <StyledUnderline
-      src={underlines[Math.floor(Math.random() * 5)]}
-      alt="link underline"
-    />
+    <UnderlineContainer>
+      <StyledUnderline
+        src={underlines[Math.floor(Math.random() * 5)]}
+        alt="link underline"
+      />
+    </UnderlineContainer>
   );
 };
 
@@ -80,6 +86,6 @@ export const ExternalLink = ({
 }: ExternalLinkProps) => (
   <StyledExternalLink {...props}>
     {children}
-    {!hideUnderline && <LinkUnderline />}{" "}
+    {!hideUnderline && <LinkUnderline />}
   </StyledExternalLink>
 );

@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import emailjs from "@emailjs/browser";
 import * as Yup from "yup";
+import styled from "styled-components";
 
 import { ContactSubmissionMessage } from "./ContactSubmissionMessage";
 import { TextField, TextareaField } from "../../ui/FormInputs";
 import { Button } from "../../ui/Button";
 import { Text } from "../../ui/Text";
 import { InternalLink } from "../../ui/Link";
+import { ReactComponent as Arrow } from "../../../assets/arrow.svg";
 
 enum SubmissionStatus {
   ERROR = "error",
@@ -19,6 +21,24 @@ const validationSchema = Yup.object().shape({
   email: Yup.string().email().required().label("E-mail"),
   message: Yup.string().required().label("Message"),
 });
+
+const StyledArrow = styled(Arrow)`
+  width: 36px;
+  margin-right: 8px;
+`;
+
+const TermsLink = styled(InternalLink)`
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  :hover,
+  :focus {
+    ${StyledArrow} {
+      filter: invert(66%) sepia(17%) saturate(1412%) hue-rotate(201deg)
+        brightness(112%) contrast(101%);
+    }
+  }
+`;
 
 const Contact: React.FC = () => {
   const [submissionStatus, setSubmissionStatus] = useState<
@@ -98,15 +118,16 @@ const Contact: React.FC = () => {
                   Submit
                 </Button>
                 <Text variant="pFinePrint">
-                  {`By clicking "Submit", you confirm that you have read and agree to
-            the `}
-                  <InternalLink to="/impressum#terms" hideUnderline>
-                    <Text variant="pFinePrint">
-                      information and terms in the impressum and privacy policy
-                      (Datenschutzerklärung)
-                    </Text>
-                  </InternalLink>
+                  By clicking "Submit", you confirm that you have read and agree
+                  to the
                 </Text>
+                <TermsLink to="/impressum#terms" hideUnderline>
+                  <StyledArrow />{" "}
+                  <Text variant="pFinePrint">
+                    information and terms in the impressum and privacy policy
+                    (Datenschutzerklärung)
+                  </Text>
+                </TermsLink>
               </Form>
             );
           }}

@@ -4,7 +4,6 @@ import linkedin from "../../../assets/icons8-linkedin-30.png";
 
 import { Text } from "../../ui/Text";
 import { ExternalLink, InternalLink } from "../../ui/Link";
-import { ReactComponent as Arrow } from "../../../assets/arrow-1.svg";
 
 const References: React.FC = () => (
   <div className="references">
@@ -18,7 +17,6 @@ const References: React.FC = () => (
       <Text variant="p">
         Most of my recent work is proprietary but I am very happy to answer
         questions and provide up-to-date reference code if you send me a{" "}
-        <Arrow />
         <InternalLink to="/contact">message</InternalLink>
       </Text>
     </section>
