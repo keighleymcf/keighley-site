@@ -4,7 +4,12 @@ import styled from "styled-components";
 import { Text } from "../../ui/Text";
 import { ExternalLink } from "src/components/ui/Link";
 
-const ImpressumContainer = styled.section`
+const ImpressumContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ImpressumSection = styled.section`
   display: flex;
   flex-direction: column;
 `;
@@ -12,27 +17,33 @@ const ImpressumContainer = styled.section`
 export const Impressum = () => (
   <ImpressumContainer>
     <Text variant="h2">Impressum / Legal Disclosure</Text>
-    <section id="contact-impressum">
+    <ImpressumSection id="contact-impressum">
       <Text variant="h3">Contact Information</Text>
       <Text variant="p">Keighley McFarland</Text>
       <Text variant="p">Vienna, Austria</Text>
       <Text variant="p">
         E-Mail:{" "}
-        <ExternalLink href="mailto:contact@keighleymcfarland.me">
+        <ExternalLink
+          hideUnderline
+          arrow
+          href="mailto:contact@keighleymcfarland.me"
+        >
           contact@keighleymcfarland.me
         </ExternalLink>
       </Text>
       <Text variant="p">
         Internet address:{" "}
         <ExternalLink
+          hideUnderline
+          arrow
           href="https://www.keighleymcfarland.me"
           rel="noopener noreferrer"
         >
           www.keighleymcfarland.me
         </ExternalLink>
       </Text>
-    </section>
-    <section id="terms-disclaimer">
+    </ImpressumSection>
+    <ImpressumSection id="terms-disclaimer">
       <Text variant="h3">Haftung für Inhalte dieser Webseite</Text>
       <Text variant="p">
         Ich entwickele die Inhalte dieser Webseite ständig weiter und bemühen
@@ -80,8 +91,8 @@ export const Impressum = () => (
         verpflichtet sind, an Streitbeilegungsverfahren vor einer
         Verbraucherschlichtungsstelle teilzunehmen.
       </Text>
-    </section>
-    <section id="datenschutzerklaerung">
+    </ImpressumSection>
+    <ImpressumSection id="datenschutzerklaerung">
       <Text variant="h2">Datenschutzerklärung</Text>
       <Text variant="h3">Datenschutz</Text>
       <Text variant="p">
@@ -272,22 +283,34 @@ export const Impressum = () => (
         der Datenschutzerklärung von EmailJS. Dieser Datenverarbeitungsvertrag
         kann bei Interesse unter nachstehender Internetadresse eingesehen
         werden:
-        <a href="https://www.emailjs.com/legal/gdrp-compliant/">
+        <ExternalLink
+          hideUnderline
+          arrow
+          href="https://www.emailjs.com/legal/gdrp-compliant/"
+        >
           https://www.emailjs.com/legal/gdrp-compliant/
-        </a>
+        </ExternalLink>
       </Text>
       <Text variant="p">
         Die Datenschutzbestimmungen von EmailJS können Sie hier einsehen:
-        <a href="https://www.emailjs.com/legal/privacy-policy/">
+        <ExternalLink
+          hideUnderline
+          arrow
+          href="https://www.emailjs.com/legal/privacy-policy/"
+        >
           https://www.emailjs.com/legal/privacy-policy/
-        </a>
+        </ExternalLink>
       </Text>
-    </section>
+    </ImpressumSection>
     <Text variant="p">
       Quelle: Erstellt mit dem{" "}
-      <a href="https://www.firmenwebseiten.at/impressum-generator/">
+      <ExternalLink
+        hideUnderline
+        arrow
+        href="https://www.firmenwebseiten.at/impressum-generator/"
+      >
         Datenschutz Generator von firmenwebseiten.at
-      </a>
+      </ExternalLink>
       .
     </Text>
   </ImpressumContainer>

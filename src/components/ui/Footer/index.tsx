@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { InternalLink, ExternalLink } from "../../ui/Link";
-import { Text } from "../../ui/Text";
+import { InternalLink, ExternalLink } from "../Link";
+import { Text } from "../Text";
 import github from "../../../assets/icons8-github-30.png";
 import linkedin from "../../../assets/icons8-linkedin-30.png";
 
@@ -20,7 +20,7 @@ const FooterContainer = styled.footer`
 
 const IconContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 
   > :not(:last-child) {
     padding-right: 4px;

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Header } from "../../pages/Header";
-import { Footer } from "../../pages/Footer";
+import { Header } from "../Header";
+import { Footer } from "../Footer";
 
 type LayoutProps = React.HTMLAttributes<HTMLDivElement>;
 
