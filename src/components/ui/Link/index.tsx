@@ -8,7 +8,7 @@ import Underline4 from "../../../assets/underline-4.svg";
 import Underline5 from "../../../assets/underline-5.svg";
 import { ReactComponent as Arrow } from "../../../assets/arrow.svg";
 
-type BaseLinkProps = { hideUnderline?: boolean; arrow?: boolean };
+type BaseLinkProps = { variant?: "primary" | "secondary" };
 type InternalLinkProps = LinkProps & BaseLinkProps;
 type ExternalLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
   BaseLinkProps;
@@ -46,10 +46,11 @@ const LinkStyles = css`
     }
   }
 
-  ${(props) => (props.hideUnderline ? `width: auto;` : `width: min-content`)}
+  ${(props) =>
+    props.variant === "secondary" ? `width: auto;` : `width: min-content`}
 
   ${(props) =>
-    props.arrow &&
+    props.variant === "secondary" &&
     `width: auto;
    
     :hover,
@@ -89,35 +90,33 @@ const LinkUnderline = () => {
 };
 
 export const InternalLink = ({
-  hideUnderline,
-  arrow,
+  variant = "primary",
   children,
   ...props
 }: InternalLinkProps) => (
-  <StyledInternalLink hideUnderline={hideUnderline} arrow={arrow} {...props}>
-    {arrow && (
+  <StyledInternalLink variant={variant} {...props}>
+    {variant === "secondary" && (
       <>
         <StyledArrow />{" "}
       </>
     )}
     {children}
-    {!hideUnderline && <LinkUnderline />}
+    {variant === "primary" && <LinkUnderline />}
   </StyledInternalLink>
 );
 
 export const ExternalLink = ({
-  hideUnderline,
-  arrow,
+  variant = "primary",
   children,
   ...props
 }: ExternalLinkProps) => (
-  <StyledExternalLink hideUnderline={hideUnderline} arrow={arrow}>
-    {arrow && (
+  <StyledExternalLink variant={variant} {...props}>
+    {variant === "secondary" && (
       <>
         <StyledArrow />{" "}
       </>
     )}
     {children}
-    {!hideUnderline && <LinkUnderline />}
+    {variant === "primary" && <LinkUnderline />}
   </StyledExternalLink>
 );

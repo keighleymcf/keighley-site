@@ -98,15 +98,16 @@ const Contact: React.FC = () => {
                   Submit
                 </Button>
                 <Text variant="pFinePrint">
-                  By clicking "Submit", you confirm that you have read and agree
-                  to the
-                </Text>
-                <InternalLink to="/impressum#terms" hideUnderline arrow>
-                  <Text variant="pFinePrint">
-                    information and terms in the impressum and privacy policy
+                  <>
+                    By clicking "Submit", you confirm that you have read and
+                    agree to the information and terms and the privacy policy in
+                    the{" "}
+                    <InternalLink to="/impressum#terms" variant="secondary">
+                      <Text variant="pFinePrint">impressum</Text>
+                    </InternalLink>{" "}
                     (Datenschutzerklärung)
-                  </Text>
-                </InternalLink>
+                  </>
+                </Text>
               </Form>
             );
           }}

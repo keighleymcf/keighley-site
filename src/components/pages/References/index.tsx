@@ -35,7 +35,9 @@ const References: React.FC = () => (
       <Text variant="p">
         Most of my recent work is proprietary but I am very happy to answer
         questions and provide up-to-date reference code if you send me a{" "}
-        <InternalLink to="/contact">message</InternalLink>
+        <InternalLink to="/contact" variant="secondary">
+          message
+        </InternalLink>
       </Text>
     </ReferenceSection>
     <ReferenceSection id="references-socials">

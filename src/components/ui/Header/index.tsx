@@ -25,7 +25,7 @@ const HeaderName = styled(InternalLink)`
 
 export const Header: React.FC = () => (
   <HeaderContainer>
-    <HeaderName to="/" hideUnderline>
+    <HeaderName to="/" variant="secondary">
       Keighley McFarland
     </HeaderName>
     <InternalLink to="/contact" className="link">

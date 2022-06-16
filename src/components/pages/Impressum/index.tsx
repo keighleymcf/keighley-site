@@ -27,8 +27,7 @@ export const Impressum = () => (
       <Text variant="p">
         E-Mail:{" "}
         <ExternalLink
-          hideUnderline
-          arrow
+          variant="secondary"
           href="mailto:contact@keighleymcfarland.me"
         >
           contact@keighleymcfarland.me
@@ -37,8 +36,7 @@ export const Impressum = () => (
       <Text variant="p">
         Internet address:{" "}
         <ExternalLink
-          hideUnderline
-          arrow
+          variant="secondary"
           href="https://www.keighleymcfarland.me"
           rel="noopener noreferrer"
         >
@@ -287,8 +285,7 @@ export const Impressum = () => (
         kann bei Interesse unter nachstehender Internetadresse eingesehen
         werden:
         <ExternalLink
-          hideUnderline
-          arrow
+          variant="secondary"
           href="https://www.emailjs.com/legal/gdrp-compliant/"
         >
           https://www.emailjs.com/legal/gdrp-compliant/
@@ -297,8 +294,7 @@ export const Impressum = () => (
       <Text variant="p">
         Die Datenschutzbestimmungen von EmailJS können Sie hier einsehen:
         <ExternalLink
-          hideUnderline
-          arrow
+          variant="secondary"
           href="https://www.emailjs.com/legal/privacy-policy/"
         >
           https://www.emailjs.com/legal/privacy-policy/
@@ -308,8 +304,7 @@ export const Impressum = () => (
     <Text variant="p">
       Quelle: Erstellt mit dem{" "}
       <ExternalLink
-        hideUnderline
-        arrow
+        variant="secondary"
         href="https://www.firmenwebseiten.at/impressum-generator/"
       >
         Datenschutz Generator von firmenwebseiten.at
