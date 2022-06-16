@@ -8,9 +8,14 @@ const HeaderContainer = styled.header`
   align-self: flex-end;
   justify-content: flex-end;
   align-items: flex-start;
-  padding: 24px 0 16px;
+  padding: 0 0 24px 0;
+
   > :not(:last-child) {
     padding-right: 16px;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.mobile}) {
+    padding: 16px 0 24px;
   }
 `;
 

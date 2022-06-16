@@ -17,7 +17,10 @@ const ReferenceSection = styled.section`
 
 const SocialLink = styled.div`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  > :first-child {
+    margin-right: 8px;
+  }
 `;
 
 const References: React.FC = () => (

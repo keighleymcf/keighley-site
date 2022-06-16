@@ -7,6 +7,9 @@ import { ExternalLink } from "src/components/ui/Link";
 const ImpressumContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-wrap: break-all;
+  word-break: break-word;
 `;
 
 const ImpressumSection = styled.section`

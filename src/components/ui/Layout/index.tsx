@@ -12,14 +12,17 @@ const LayoutContainer = styled.div`
   height: 100vh;
   width: 100vw;
   justify-content: space-between;
-  padding: 16px 16px 0;
+  padding: 16px;
   align-items: center;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.mobile}) {
+    padding: 16px 32px;
+  }
 `;
 
 const ContentContainer = styled.div`
   display: flex;
   max-width: 720px;
-  width: 100%;
   justify-content: center;
   align-items: center;
 `;

@@ -8,48 +8,62 @@ import linkedin from "../../../assets/icons8-linkedin-30.png";
 const FooterContainer = styled.footer`
   display: flex;
   width: 100%;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   align-self: flex-end;
-  position: relative;
-  bottom: 0;
-  z-index: 10;
-  padding: 0 16px;
   height: 48px;
   margin-top: 24px;
 `;
 
-const IconContainer = styled.div`
+const FooterCopyrightText = styled(Text)`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  height: 100%;
+`;
 
-  > :not(:last-child) {
-    padding-right: 4px;
+const FooterLinkContainer = styled.div`
+  display: none;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.mobile}) {
+    display: flex;
+    align-items: flex-end;
+
+    > :not(:last-child) {
+      padding-right: 8px;
+    }
   }
+`;
+
+const SocialIcon = styled.img`
+  transform: translateY(25%);
 `;
 
 export const Footer: React.FC = () => (
   <FooterContainer>
-    <Text variant="pFinePrint">© Keighley McFarland 2022</Text>
-    <InternalLink to="/impressum">
-      <Text variant="pFinePrint">Impressum</Text>
-    </InternalLink>
-    <IconContainer>
+    <FooterCopyrightText variant="pFinePrint">
+      © Keighley McFarland 2022
+    </FooterCopyrightText>
+    <FooterLinkContainer>
+      <InternalLink to="/impressum">
+        <Text variant="pFinePrint">Impressum</Text>
+      </InternalLink>
+    </FooterLinkContainer>
+    <FooterLinkContainer>
       <InternalLink to="/contact">
         <Text variant="pFinePrint">Contact</Text>
       </InternalLink>
       <ExternalLink href="https://github.com/keighleymcf">
-        <img
+        <SocialIcon
           src={github}
           alt="github icon from icons8 https://icons8.com/icons/set/github"
         />
       </ExternalLink>
       <ExternalLink href="https://www.linkedin.com/in/keighleymcfarland/">
-        <img
+        <SocialIcon
           src={linkedin}
           alt="linkedin icon from icons8 https://icons8.com/icons/set/linkedin"
         />
       </ExternalLink>
-    </IconContainer>
+    </FooterLinkContainer>
   </FooterContainer>
 );

@@ -34,9 +34,9 @@ const StyledArrow = styled(Arrow)`
 const LinkStyles = css`
   text-decoration: none;
   color: ${(props) => props.theme.palette.black};
-  font-size: 1rem;
   cursor: pointer;
   display: inline-block;
+  height: min-content;
 
   :hover,
   :focus {

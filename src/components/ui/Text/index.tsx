@@ -37,7 +37,7 @@ const variants = {
   pFinePrint: css`
     font-size: 0.6rem;
     font-weight: 300;
-    line-height: 0.8rem;
+    line-height: 0.6rem;
     margin: 0;
   `,
 };
