@@ -18,6 +18,7 @@ const StyledButton = styled.button<{ $loading: boolean }>`
   cursor: pointer;
   width: 200px;
   height: 52px;
+  margin: 8px 0 16px 0;
 
   &:hover {
     border-color: ${(props) => props.theme.palette.periwinkleLight};

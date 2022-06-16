@@ -16,6 +16,7 @@ const FooterContainer = styled.footer`
   z-index: 10;
   padding: 0 16px;
   height: 48px;
+  margin-top: 24px;
 `;
 
 const IconContainer = styled.div`

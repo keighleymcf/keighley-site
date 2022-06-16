@@ -6,18 +6,22 @@ const variants = {
   h1: css`
     font-size: 2.8rem;
     font-weight: 700;
+    margin: 0 0 48px 0;
   `,
   h2: css`
     font-size: 2.6rem;
     font-weight: 700;
+    margin: 24px 0;
   `,
   h3: css`
     font-size: 2rem;
     font-weight: 700;
+    margin: 24px 0 12px 0;
   `,
   h4: css`
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 700;
+    margin: 12px 0;
   `,
   p: css`
     font-size: 1rem;

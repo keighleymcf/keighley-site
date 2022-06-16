@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Text } from "../../ui/Text";
 
 const HeroContainer = styled.div`
-  height: 400px;
+  height: 320px;
 `;
 
 const adjectiveList: string[] = [

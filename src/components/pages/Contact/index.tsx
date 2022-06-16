@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
 
   return (
     <section className="contact">
-      <Text variant="h3">Contact</Text>
+      <Text variant="h2">Contact</Text>
       {submissionStatus ? (
         <ContactSubmissionMessage
           error={submissionStatus === SubmissionStatus.ERROR}

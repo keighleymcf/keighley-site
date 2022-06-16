@@ -16,7 +16,6 @@ const HeaderContainer = styled.header`
 
 const HeaderName = styled(InternalLink)`
   margin-right: 24px;
-  color: ${(props) => props.theme.palette.periwinkle};
 `;
 
 export const Header: React.FC = () => (
