@@ -12,7 +12,7 @@ const fieldStyles = css`
   box-shadow: none;
   &:focus {
     border: 2px solid black;
-    outline: ${(props) => props.theme.palette.periwinkle} solid 2px;
+    outline: ${(props) => props.theme.palette.periwinkleLight} solid 2px;
   }
   &:disabled {
     color: ${(props) => props.theme.palette.darkGrey};

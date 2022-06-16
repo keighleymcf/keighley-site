@@ -1,6 +1,6 @@
 const palette = {
-  periwinkle: "#b8bbff",
-  periwinkleLight: "#cbcdff",
+  periwinkle: "#8a8dde",
+  periwinkleLight: "#cdcbf1",
   shadow: "#d1d0d0",
   darkGrey: "#646464",
   red: "#ff0100",

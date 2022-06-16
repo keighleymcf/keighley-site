@@ -20,14 +20,14 @@ const StyledButton = styled.button<{ $loading: boolean }>`
   height: 52px;
 
   &:hover {
-    border-color: ${(props) => props.theme.palette.periwinkle};
+    border-color: ${(props) => props.theme.palette.periwinkleLight};
   }
   &:focus {
     outline: none;
-    border-color: ${(props) => props.theme.palette.periwinkle};
+    border-color: ${(props) => props.theme.palette.periwinkleLight};
   }
   &:active {
-    border-color: ${(props) => props.theme.palette.periwinkleLight};
+    border-color: ${(props) => props.theme.palette.periwinkle};
   }
   &:disabled {
     background-color: ${(props) => props.theme.palette.shadow};
@@ -41,7 +41,7 @@ const StyledButton = styled.button<{ $loading: boolean }>`
       props.$loading &&
       `background-image: url("glitter.gif");
       color: transparent;
-      border-color: ${props.theme.palette.periwinkle};
+      border-color: ${props.theme.palette.periwinkleLight};
       cursor: not-allowed;
     `
     );

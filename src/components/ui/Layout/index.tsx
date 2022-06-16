@@ -13,6 +13,7 @@ const LayoutContainer = styled.div`
   width: 100vw;
   justify-content: space-between;
   padding: 16px 16px 0;
+  align-items: center;
 `;
 
 const ContentContainer = styled.div`

@@ -16,6 +16,8 @@ const UnderlineContainer = styled.div`
   width: 100%;
   max-width: 100%;
   height: 16px;
+  display: flex;
+  align-items: flex-start;
 `;
 
 const StyledUnderline = styled.img`
@@ -24,7 +26,6 @@ const StyledUnderline = styled.img`
 `;
 
 const LinkStyles = css`
-  width: min-content;
   text-decoration: none;
   color: ${(props) => props.theme.palette.black};
   font-size: 1rem;
@@ -35,10 +36,11 @@ const LinkStyles = css`
   :hover,
   :focus {
     ${StyledUnderline} {
-      filter: invert(66%) sepia(17%) saturate(1412%) hue-rotate(201deg)
-        brightness(112%) contrast(101%);
+      filter: invert(62%) sepia(53%) saturate(1671%) hue-rotate(201deg)
+        brightness(95%) contrast(83%);
     }
   }
+  ${(props) => (props.hideUnderline ? `width: auto;` : `width: min-content`)}
 `;
 
 const StyledInternalLink = styled(Link)<InternalLinkProps>`
@@ -73,7 +75,7 @@ export const InternalLink = ({
   children,
   ...props
 }: InternalLinkProps) => (
-  <StyledInternalLink {...props}>
+  <StyledInternalLink hideUnderline={hideUnderline} {...props}>
     {children}
     {!hideUnderline && <LinkUnderline />}
   </StyledInternalLink>
@@ -84,7 +86,7 @@ export const ExternalLink = ({
   children,
   ...props
 }: ExternalLinkProps) => (
-  <StyledExternalLink {...props}>
+  <StyledExternalLink hideUnderline={hideUnderline}>
     {children}
     {!hideUnderline && <LinkUnderline />}
   </StyledExternalLink>
