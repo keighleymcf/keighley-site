@@ -4,7 +4,11 @@ import styled from "styled-components";
 import { Text } from "../../ui/Text";
 
 const HeroContainer = styled.div`
-  height: 320px;
+  height: 400px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.mobile}) {
+    height: 320px;
+  }
 `;
 
 const adjectiveList: string[] = [

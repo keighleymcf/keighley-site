@@ -8,7 +8,10 @@ type FieldErrorProps = {
 
 const StyledErrorMessage = styled(Text)`
   color: ${(props) => props.theme.palette.red};
-  padding-left: 8px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.mobile}) {
+    padding-left: 8px;
+  }
 `;
 
 export const FieldError = ({ error }: FieldErrorProps) => {

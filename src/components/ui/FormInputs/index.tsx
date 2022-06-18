@@ -29,8 +29,14 @@ const InputFieldContainer = styled.div`
 
 const LabelContainer = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   margin: 8px 0;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.mobile}) {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 const StyledInputField = styled(Field)`
