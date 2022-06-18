@@ -1,44 +1,34 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-import "./app.scss";
+import "./app.css";
+import { ThemeProvider } from "styled-components";
 
-import Header from "./Components/Header";
-import Main from "./Components/Main";
-import MainButtons from "./Components/MainButtons";
-import Footer from "./Components/Footer";
-import Contact from "./Components/Contact";
-import References from "./Components/References";
-import Impressum from "./Components/Impressum";
+import { theme } from "./theme/theme";
+
+import { Layout } from "./components/ui/Layout";
+import Main from "./components/pages/Main";
+import Contact from "./components/pages/Contact";
+import References from "./components/pages/References";
+import { Impressum } from "./components/pages/Impressum";
 
 const App = () => {
   const locale = "en";
 
   return (
     <IntlProvider locale={locale}>
-      <Router>
-        <div className="App">
-          <div className="main-content">
-            <Header />
-            <Main />
-            <Switch>
-              <Route path="/contact">
-                <Contact />
-              </Route>
-              <Route path="/references">
-                <References />
-              </Route>
-              <Route path="/impressum">
-                <Impressum />
-              </Route>
-              <Route path="/">
-                <MainButtons />
-              </Route>
-            </Switch>
-          </div>
-          <Footer />
-        </div>
-      </Router>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Layout>
+            <Routes>
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/references" element={<References />} />
+              <Route path="/impressum" element={<Impressum />} />
+              <Route path="/" element={<Main />} />
+            </Routes>
+          </Layout>
+        </Router>
+      </ThemeProvider>
     </IntlProvider>
   );
 };

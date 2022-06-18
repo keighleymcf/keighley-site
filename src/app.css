@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Kollektif;
+  src: url("assets/kollektif/Kollektif.ttf") format("opentype");
+}
+
+* {
+  font-family: Kollektif, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+/* https://cloudfour.com/thinks/childish-font-sizes/ */
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
