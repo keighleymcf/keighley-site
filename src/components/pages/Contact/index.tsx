@@ -20,19 +20,25 @@ const validationSchema = Yup.object().shape({
   message: Yup.string().required().label("Message"),
 });
 
+type FormValues = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 const Contact: React.FC = () => {
   const [submissionStatus, setSubmissionStatus] = useState<
     SubmissionStatus | undefined
   >(undefined);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const sendEmail = () => {
+  const sendEmail = (values: FormValues) => {
     setLoading(true);
     emailjs
-      .sendForm(
+      .send(
         "default_service",
         "template_8dZbJEFv",
-        "#contactForm",
+        values,
         process.env.REACT_APP_EMAILJS_USERID
       )
       .then((result) => {
@@ -47,11 +53,6 @@ const Contact: React.FC = () => {
       });
   };
 
-  const onSubmit = () => {
-    setLoading(true);
-    sendEmail();
-  };
-
   return (
     <section className="contact">
       <Text variant="h2">Contact</Text>
@@ -62,7 +63,7 @@ const Contact: React.FC = () => {
       ) : (
         <Formik
           initialValues={{ name: "", email: "", message: "" }}
-          onSubmit={onSubmit}
+          onSubmit={sendEmail}
           validationSchema={validationSchema}
         >
           {({ errors, dirty, values }) => {
