@@ -55,7 +55,7 @@ const Label = ({ label, error, name }: BaseInputProps) => {
   return (
     <LabelContainer>
       <label htmlFor={name}>{label}</label>
-      {error && <FieldError error={error} />}
+      {error && <FieldError error={error} name={name} />}
     </LabelContainer>
   );
 };

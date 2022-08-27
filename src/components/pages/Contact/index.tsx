@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
         >
           {({ errors, dirty, values }) => {
             return (
-              <Form className="contact-form" id="contactForm">
+              <Form id="contactForm" data-testid="contact-form">
                 <TextField
                   name="name"
                   label="Your name"

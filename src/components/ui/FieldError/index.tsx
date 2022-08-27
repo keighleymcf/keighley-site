@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { Text } from "../Text";
 
 type FieldErrorProps = {
-  error: string | undefined;
+  error: string;
+  name: string;
 };
 
 const StyledErrorMessage = styled(Text)`
@@ -14,6 +15,10 @@ const StyledErrorMessage = styled(Text)`
   }
 `;
 
-export const FieldError = ({ error }: FieldErrorProps) => {
-  return <StyledErrorMessage variant="p">{error}</StyledErrorMessage>;
+export const FieldError = ({ error, name }: FieldErrorProps) => {
+  return (
+    <StyledErrorMessage data-testid={`${name}-error`} variant="p">
+      {error}
+    </StyledErrorMessage>
+  );
 };
