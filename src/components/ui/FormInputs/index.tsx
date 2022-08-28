@@ -64,7 +64,7 @@ export const TextField = ({ label, error, ...props }: TextFieldProps) => {
   return (
     <InputFieldContainer>
       <Label label={label} error={error} name={props.name} />
-      <StyledInputField {...props}></StyledInputField>
+      <StyledInputField aria-labelledby={label} {...props}></StyledInputField>
     </InputFieldContainer>
   );
 };
@@ -89,7 +89,13 @@ export const TextareaField = ({
   return (
     <InputFieldContainer>
       <Label label={label} error={error} name={name} />
-      <StyledTextareaField as="textarea" rows={rows} {...field} {...props} />
+      <StyledTextareaField
+        as="textarea"
+        rows={rows}
+        aria-labelledby={label}
+        {...field}
+        {...props}
+      />
     </InputFieldContainer>
   );
 };

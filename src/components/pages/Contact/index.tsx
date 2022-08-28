@@ -75,6 +75,7 @@ const Contact: React.FC = () => {
                   type="text"
                   error={errors.name}
                   disabled={loading}
+                  data-testid="name-input"
                 />
                 <TextField
                   name="email"
@@ -82,6 +83,7 @@ const Contact: React.FC = () => {
                   type="email"
                   error={errors.email}
                   disabled={loading}
+                  data-testid="email-input"
                 />
                 <TextareaField
                   name="message"
@@ -89,6 +91,7 @@ const Contact: React.FC = () => {
                   rows={4}
                   error={errors.message}
                   disabled={loading}
+                  data-testid="message-input"
                 />
 
                 <Button
