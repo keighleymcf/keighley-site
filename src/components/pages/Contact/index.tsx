@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
         "default_service",
         "template_8dZbJEFv",
         values,
-        process.env.REACT_APP_EMAILJS_USERID
+        "user_VGaBvgtkCTZGa04kS0NDr"
       )
       .then((result) => {
         if (result.status === 200) {
