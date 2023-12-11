@@ -101,13 +101,13 @@ const Contact: React.FC = () => {
                 >
                   Submit
                 </Button>
-                <Text variant="pFinePrint">
+                <Text variant="spanFinePrint">
                   <>
                     By clicking "Submit", you confirm that you have read and
                     agree to the information and terms and the privacy policy in
                     the{" "}
                     <InternalLink to="/impressum#terms" variant="secondary">
-                      <Text variant="pFinePrint">impressum</Text>
+                      <Text variant="spanFinePrint">impressum</Text>
                     </InternalLink>{" "}
                     (Datenschutzerklärung)
                   </>

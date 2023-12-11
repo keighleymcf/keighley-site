@@ -29,8 +29,8 @@ const References: React.FC = () => (
     <ReferenceSection id="references-projects">
       <Text variant="p">
         I have worked on a variety of products and projects in the fields of{" "}
-        <span>health tech</span>, <span>HR tech</span>,{" "}
-        <span>tech education</span>, <span>crypto</span>, and more
+        <span>fintech</span>, <span>health tech</span>, <span>HR tech</span>,{" "}
+        <span>tech education</span>, and more
       </Text>
       <Text variant="p">
         Most of my recent work is proprietary but I am very happy to answer

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-type TextProps = { variant: "h1" | "h2" | "h3" | "h4" | "p" | "pFinePrint" };
+type TextProps = { variant: "h1" | "h2" | "h3" | "h4" | "p" | "spanFinePrint" };
 
 const variants = {
   h1: css`
@@ -34,7 +34,7 @@ const variants = {
       padding: 4px;
     }
   `,
-  pFinePrint: css`
+  spanFinePrint: css`
     font-size: 0.6rem;
     font-weight: 300;
     line-height: 0.6rem;
@@ -50,7 +50,7 @@ export const StyledText = styled.span<TextProps>`
 export const Text: React.FC<TextProps> = ({ variant, children, ...props }) => {
   return (
     <StyledText
-      as={variant === "pFinePrint" ? "p" : variant}
+      as={variant === "spanFinePrint" ? "span" : variant}
       variant={variant}
       {...props}
     >

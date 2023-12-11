@@ -40,17 +40,17 @@ const SocialIcon = styled.img`
 
 export const Footer: React.FC = () => (
   <FooterContainer>
-    <FooterCopyrightText variant="pFinePrint">
+    <FooterCopyrightText variant="spanFinePrint">
       © Keighley McFarland 2022
     </FooterCopyrightText>
     <FooterLinkContainer>
       <InternalLink to="/impressum">
-        <Text variant="pFinePrint">Impressum</Text>
+        <Text variant="spanFinePrint">Impressum</Text>
       </InternalLink>
     </FooterLinkContainer>
     <FooterLinkContainer>
       <InternalLink to="/contact">
-        <Text variant="pFinePrint">Contact</Text>
+        <Text variant="spanFinePrint">Contact</Text>
       </InternalLink>
       <ExternalLink href="https://github.com/keighleymcf">
         <SocialIcon
