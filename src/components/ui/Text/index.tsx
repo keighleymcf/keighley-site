@@ -1,6 +1,9 @@
 import styled, { css } from "styled-components";
 
-type TextProps = { variant: "h1" | "h2" | "h3" | "h4" | "p" | "spanFinePrint" };
+type TextProps = {
+  variant: "h1" | "h2" | "h3" | "h4" | "p" | "spanFinePrint";
+  children: React.ReactNode;
+};
 
 const variants = {
   h1: css`

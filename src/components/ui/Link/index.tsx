@@ -6,7 +6,7 @@ import Underline2 from "../../../assets/underline-2.svg";
 import Underline3 from "../../../assets/underline-3.svg";
 import Underline4 from "../../../assets/underline-4.svg";
 import Underline5 from "../../../assets/underline-5.svg";
-import { ReactComponent as Arrow } from "../../../assets/arrow.svg";
+// import { ReactComponent as Arrow } from "../../../assets/arrow.svg";
 
 type BaseLinkProps = { variant?: "primary" | "secondary" };
 type InternalLinkProps = LinkProps & BaseLinkProps;
@@ -26,12 +26,12 @@ const StyledUnderline = styled.img`
   height: 100%;
 `;
 
-const StyledArrow = styled(Arrow)`
-  width: 36px;
-  transform: translateY(12.5%);
-`;
+// const StyledArrow = styled(Arrow)`
+//   width: 36px;
+//   transform: translateY(12.5%);
+// `;
 
-const LinkStyles = css`
+const LinkStyles = css<BaseLinkProps>`
   text-decoration: none;
   color: ${(props) => props.theme.palette.black};
   cursor: pointer;
@@ -55,13 +55,13 @@ const LinkStyles = css`
    
     :hover,
     :focus {
-      ${StyledArrow} {
-        filter: invert(66%) sepia(17%) saturate(1412%) hue-rotate(201deg)
-          brightness(112%) contrast(101%);
-      }
+      
     }`}
 `;
-
+// ${StyledArrow} {
+//   filter: invert(66%) sepia(17%) saturate(1412%) hue-rotate(201deg)
+//   brightness(112%) contrast(101%);
+// }
 const StyledInternalLink = styled(Link)<InternalLinkProps>`
   ${LinkStyles}
 `;
@@ -95,11 +95,11 @@ export const InternalLink = ({
   ...props
 }: InternalLinkProps) => (
   <StyledInternalLink variant={variant} {...props}>
-    {variant === "secondary" && (
+    {/* {variant === "secondary" && (
       <>
         <StyledArrow />{" "}
       </>
-    )}
+    )} */}
     {children}
     {variant === "primary" && <LinkUnderline />}
   </StyledInternalLink>
@@ -111,11 +111,11 @@ export const ExternalLink = ({
   ...props
 }: ExternalLinkProps) => (
   <StyledExternalLink variant={variant} {...props}>
-    {variant === "secondary" && (
+    {/* {variant === "secondary" && (
       <>
         <StyledArrow />{" "}
       </>
-    )}
+    )} */}
     {children}
     {variant === "primary" && <LinkUnderline />}
   </StyledExternalLink>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { InternalLink } from "src/components/ui/Link";
+import { InternalLink } from "../Link";
 
 const HeaderContainer = styled.header`
   display: flex;
