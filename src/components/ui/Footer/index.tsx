@@ -41,7 +41,7 @@ const SocialIcon = styled.img`
 export const Footer: React.FC = () => (
   <FooterContainer>
     <FooterCopyrightText variant="spanFinePrint">
-      © Keighley McFarland 2022
+      © Keighley McFarland {new Date().getFullYear()}
     </FooterCopyrightText>
     <FooterLinkContainer>
       <InternalLink to="/impressum">
