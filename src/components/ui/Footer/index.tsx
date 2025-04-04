@@ -43,11 +43,9 @@ export const Footer: React.FC = () => (
     <FooterCopyrightText variant="spanFinePrint">
       © Keighley McFarland {new Date().getFullYear()}
     </FooterCopyrightText>
-    <FooterLinkContainer>
-      <InternalLink to="/impressum">
-        <Text variant="spanFinePrint">Impressum</Text>
-      </InternalLink>
-    </FooterLinkContainer>
+    <InternalLink to="/impressum">
+      <Text variant="spanFinePrint">Impressum</Text>
+    </InternalLink>
     <FooterLinkContainer>
       <InternalLink to="/contact">
         <Text variant="spanFinePrint">Contact</Text>
