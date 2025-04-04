@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 import { Text } from "../../ui/Text";
@@ -47,7 +46,7 @@ export const Impressum = () => (
     <ImpressumSection id="terms-disclaimer">
       <Text variant="h3">Haftung für Inhalte dieser Webseite</Text>
       <Text variant="p">
-        Ich entwickele die Inhalte dieser Webseite ständig weiter und bemühen
+        Ich entwickele die Inhalte dieser Webseite ständig weiter und bemühe
         mich korrekte und aktuelle Informationen bereitzustellen. Leider kann
         ich keine Haftung für die Korrektheit aller Inhalte auf dieser Webseite
         übernehmen, speziell für jene die seitens Dritter bereitgestellt wurden.

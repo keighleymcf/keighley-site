@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
           onSubmit={sendEmail}
           validationSchema={validationSchema}
         >
-          {({ errors, dirty, values }) => {
+          {({ errors, dirty }) => {
             return (
               <Form id="contactForm" data-testid="contact-form">
                 <TextField
