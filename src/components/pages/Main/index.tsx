@@ -51,17 +51,13 @@ const Main: React.FC = () => {
 
       <section id="description-main">
         <Text variant="p">
-          I am a full-stack web developer specialised in Javascript, React,
-          Typescript, and Node.js based in Vienna
+          I am a senior web developer specialised in AI applications based in
+          Vienna
         </Text>
         <Text variant="p">
-          In my previous life, I was a project manager and science
-          communications specialist
+          I am passionate about tech leadership and generative AI
         </Text>
-        <Text variant="p">
-          I love building high-quality, memorable digital products that make
-          users' and clients' lives better
-        </Text>
+        <Text variant="p">Let's work together! 💪</Text>
       </section>
     </div>
   );
