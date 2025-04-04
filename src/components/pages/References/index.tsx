@@ -28,9 +28,10 @@ const References: React.FC = () => (
     <Text variant="h2">Professional experience and references</Text>
     <ReferenceSection id="references-projects">
       <Text variant="p">
-        I have worked on a variety of products and projects in the fields of{" "}
-        <span>fintech</span>, <span>health tech</span>, <span>HR tech</span>,{" "}
-        <span>tech education</span>, and more
+        I have worked in a technical and managing role in a variety of projects
+        in the fields of <span>visual generative AI</span>,{" "}
+        <span>LLM applications</span>, <span>fintech</span>,{" "}
+        <span>tech mentoring</span>, and more
       </Text>
       <Text variant="p">
         Most of my recent work is proprietary but I am very happy to answer

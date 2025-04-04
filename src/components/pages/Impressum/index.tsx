@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Text } from "../../ui/Text";
-import { ExternalLink } from "src/components/ui/Link";
+import { ExternalLink } from "../../ui/Link";
 
 const ImpressumContainer = styled.div`
   display: flex;
