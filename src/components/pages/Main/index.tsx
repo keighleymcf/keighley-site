@@ -11,6 +11,11 @@ const HeroContainer = styled.div`
   }
 `;
 
+const MainContentContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+`;
+
 const adjectiveList: string[] = [
   "spark",
   "vision",
@@ -49,7 +54,7 @@ const Main: React.FC = () => {
         </Text>
       </HeroContainer>
 
-      <section id="description-main">
+      <MainContentContainer id="description-main">
         <Text variant="p">
           I am a senior web developer specialised in AI applications based in
           Vienna
@@ -58,7 +63,7 @@ const Main: React.FC = () => {
           I am passionate about tech leadership and generative AI
         </Text>
         <Text variant="p">Let's work together! 💪</Text>
-      </section>
+      </MainContentContainer>
     </div>
   );
 };

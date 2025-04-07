@@ -8,7 +8,7 @@ import linkedin from "../../../assets/icons8-linkedin-30.png";
 const FooterContainer = styled.footer`
   display: flex;
   width: 100%;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   align-self: flex-end;
   height: 48px;
