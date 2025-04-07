@@ -15,7 +15,7 @@ type ExternalLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
 const UnderlineContainer = styled.div`
   width: 100%;
   max-width: 100%;
-  height: 16px;
+  height: 8px;
   display: flex;
   align-items: flex-start;
 `;

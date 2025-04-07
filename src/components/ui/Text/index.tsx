@@ -29,7 +29,8 @@ const variants = {
   p: css`
     font-size: 1rem;
     font-weight: 300;
-    margin: 0;
+    margin: 0 0 12px 0;
+    line-height: 1.5rem;
     > span {
       font-size: 0.8rem;
       background-color: ${(props) => props.theme.palette.periwinkleLight};
