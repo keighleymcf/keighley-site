@@ -49,15 +49,15 @@ const Main: React.FC = () => {
     <div id="main">
       <HeroContainer>
         <Text variant="h1">
-          Full-stack web development with <br />
+          Web & AI development with <br />
           {adjectiveList[adjIndex]}
         </Text>
       </HeroContainer>
 
       <MainContentContainer id="description-main">
         <Text variant="p">
-          I am a senior web developer specialised in AI applications based in
-          Vienna
+          I am an Entrepreneur and Senior Web Developer specialised in AI
+          applications
         </Text>
         <Text variant="p">
           I am passionate about tech leadership and generative AI
